@@ -1,0 +1,68 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include mixins.desktop {
+    background-color: variables.$white;
+    gap: 85px;
+  }
+}
+
+.contacts__title {
+  text-transform: uppercase;
+  margin: 0;
+  max-width: 165px;
+
+  @include mixins.mobile {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @include mixins.tablet {
+    margin-top: 3px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  @include mixins.desktop {
+    margin: 0;
+  }
+}
+
+.contacts__address {
+  font-style: normal;
+
+  @include mixins.desktop {
+    margin-top: -2px;
+  }
+}
+
+.contacts__address-paragraph {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  color: variables.$special-grey-dark;
+
+  @include mixins.mobile {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @include mixins.tablet {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+  }
+
+  @include mixins.desktop {
+    text-align: left;
+  }
+
+  & + & {
+    @include mixins.tablet {
+      margin-top: 19px;
+    }
+  }
+}

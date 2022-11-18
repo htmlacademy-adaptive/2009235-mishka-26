@@ -1,0 +1,133 @@
+@use "../libs/variables.scss";
+@use "../libs/mixins.scss";
+
+.input {
+  display: flex;
+  align-items: center;
+  font: inherit;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 20px;
+  color: variables.$special-grey-dark;
+  background: variables.$white;
+  border: 1px solid variables.$special-grey3;
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+  cursor: text;
+  outline: none;
+  box-shadow: none;
+  transition: variables.$transition-all;
+
+  @include mixins.mobile {
+    font-size: 16px;
+    line-height: 18px;
+    min-height: 45px;
+    padding: 9.5px 0;
+    padding-left: 14px;
+    padding-right: 40px;
+  }
+
+  @include mixins.tablet {
+    font-size: 20px;
+    line-height: 30px;
+    min-height: 52px;
+    padding: 10px 0;
+    padding-left: 18px;
+    padding-right: 50px;
+  }
+
+  &::placeholder {
+    color: rgba(variables.$special-grey-dark, 0.6);
+  }
+
+  & + svg {
+    color: variables.$black;
+  }
+
+  &:hover {
+    border-color: variables.$special-grey-light;
+  }
+
+  &:focus {
+    border: 2px solid variables.$special-grey-dark;
+
+    @include mixins.mobile {
+      padding: 8.5px 0;
+      padding-left: 13px;
+      padding-right: 39px;
+    }
+
+    @include mixins.tablet {
+      padding: 9px 0;
+      padding-left: 17px;
+      padding-right: 49px;
+    }
+
+    & + svg {
+      color: variables.$basic-green;
+    }
+  }
+
+  &:focus:invalid,
+  &--invalid,
+  &--invalid:hover {
+    border: 2px solid variables.$special-error;
+
+    @include mixins.mobile {
+      padding: 8.5px 0;
+      padding-left: 13px;
+      padding-right: 39px;
+    }
+
+    @include mixins.tablet {
+      padding: 9px 0;
+      padding-left: 17px;
+      padding-right: 49px;
+    }
+
+    & + svg {
+      color: variables.$special-error;
+    }
+  }
+
+  &:disabled,
+  &:read-only {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  &--num::-webkit-inner-spin-button,
+  &--num::-webkit-outer-spin-button {
+    appearance: none;
+  }
+
+  &--textarea {
+    resize: none;
+
+    @include mixins.mobile {
+      min-height: 152px;
+      padding: 9px 14px;
+    }
+
+    @include mixins.tablet {
+      min-height: 174px;
+      padding: 9px 18px;
+    }
+  }
+
+  &--textarea:focus {
+    padding: 8px 13px;
+
+    @include mixins.tablet {
+      padding: 8px 17px;
+    }
+  }
+
+  &::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+    right: 0;
+  }
+}

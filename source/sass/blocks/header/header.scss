@@ -1,0 +1,125 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.header {
+  background-color: variables.$white;
+
+  @include mixins.mobile {
+    min-height: 65px;
+  }
+
+  @include mixins.desktop {
+    background-color: transparent;
+  }
+}
+
+.header--index {
+  @include mixins.desktop {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      display: block;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+      background-color: #65a83e;
+    }
+  }
+}
+
+.header__container {
+  @include mixins.mobile {
+    position: relative;
+    z-index: 3;
+    border-bottom: 1px solid variables.$special-grey-lightnes;
+
+    .header--index & {
+      border: none;
+    }
+  }
+
+  @include mixins.tablet {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 28px;
+    padding-bottom: 30px;
+    /*align-items: center;*/
+  }
+
+  @include mixins.desktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 53px;
+    align-items: center;
+  }
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  flex-shrink: 0;
+
+  @include mixins.mobile {
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+
+  @include mixins.tablet {
+    margin-top: -3px;
+  }
+
+  @include mixins.desktop {
+    margin-top: 0;
+    position: relative;
+    z-index: 4;
+  }
+}
+
+.header__logo-image {
+  @include mixins.mobile {
+    width: 34px;
+    height: 38px;
+  }
+
+  @include mixins.tablet {
+    width: 61px;
+    height: 51px;
+  }
+
+  @include mixins.desktop {
+    width: 71px;
+    height: 59px;
+  }
+}
+
+.header__logo-title {
+  display: block;
+  fill: variables.$black;
+  color: variables.$black;
+
+  @include mixins.mobile {
+    position: absolute;
+    margin: 0 auto;
+    width: 107px;
+    height: auto;
+    right: 0;
+    left: 0;
+    top: 23px;
+  }
+
+  @include mixins.tablet {
+    margin-left: 10px;
+    width: 107px;
+    height: auto;
+    color: variables.$special-grey-dark;
+  }
+
+  @include mixins.desktop {
+    width: 124px;
+  }
+}

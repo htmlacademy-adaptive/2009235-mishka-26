@@ -1,0 +1,15 @@
+@use "../libs/variables.scss";
+@use "../libs/mixins.scss";
+
+.logo {
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

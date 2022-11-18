@@ -1,0 +1,163 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.work {
+  @include mixins.mobile {
+    margin-top: 21px;
+    margin-bottom: 48px;
+  }
+
+  @include mixins.tablet {
+    margin-top: 45px;
+    margin-bottom: 0;
+  }
+
+  @include mixins.desktop {
+    margin-top: 71px;
+    margin-bottom: 61px;
+  }
+}
+
+.work__container {
+  @include mixins.tablet {
+    padding-bottom: 46px;
+    border-bottom: 1px solid variables.$special-grey;
+  }
+
+  @include mixins.desktop {
+    padding-bottom: 0;
+    border: none;
+  }
+}
+
+.work__title {
+  @include mixins.header-2;
+
+  @include mixins.mobile {
+    margin-bottom: 40px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 32px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 40px;
+  }
+}
+
+.work__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  counter-reset: work-counter;
+
+  @include mixins.mobile {
+    gap: 20px;
+  }
+
+  @include mixins.tablet {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 135px;
+    row-gap: 37px;
+    margin-right: 75px;
+  }
+
+  @include mixins.desktop {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 78px;
+    margin-right: 0;
+  }
+}
+
+.work__item {
+  display: grid;
+  justify-items: start;
+  position: relative;
+
+  @include mixins.mobile {
+    grid-template-columns: 60px auto;
+    gap: 20px;
+  }
+
+  @include mixins.tablet {
+    grid-template-columns: auto;
+    gap: 31px;
+    min-height: 280px;
+    padding: 40px 0;
+    align-content: start;
+  }
+
+  @include mixins.desktop {
+    gap: 32px;
+    padding-top: 32px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    aspect-ratio: 1 / 1;
+    background-color: variables.$basic-green;
+    background-size: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-self: start;
+
+    @include mixins.mobile {
+      width: 60px;
+    }
+
+    @include mixins.tablet {
+      width: 80px;
+    }
+  }
+
+  &--sheet::before {
+    background-image: url("../img/work-sheet.svg");
+  }
+
+  &--flask::before {
+    background-image: url("../img/work-flask.svg");
+  }
+
+  &--cutlery::before {
+    background-image: url("../img/work-cutlery.svg");
+    background-size: auto 53%;
+  }
+
+  &--watch::before {
+    background-image: url("../img/work-watch.svg");
+  }
+
+  &::after {
+    @include mixins.tablet {
+      counter-increment: work-counter;
+      content: counter(work-counter);
+      font-size: 280px;
+      line-height: 280px;
+      color: variables.$basic-gray;
+      position: absolute;
+      min-width: 130px;
+      right: 0;
+      top: 0;
+      z-index: -1;
+    }
+
+    @include mixins.desktop {
+      top: -7px;
+    }
+  }
+}
+
+.work__paragraph {
+  @include mixins.paragraph;
+  color: variables.$special-grey-dark;
+  align-self: center;
+
+  @include mixins.mobile {
+    & br {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@use "../libs/variables.scss";
+@use "../libs/mixins.scss";
+
+button.button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+a.button,
+button.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: variables.$basic-green;
+  color: variables.$white;
+  border-radius: 0;
+  box-shadow: none;
+  // Text
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: variables.$transition-all;
+
+  @include mixins.mobile {
+    // Size
+    padding: 7px 13px;
+    // Text
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  @include mixins.tablet {
+    // Size
+    padding: 14px 26px;
+    // Text
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  &:hover {
+    background-color: variables.$basic-green-darknes;
+  }
+
+  &:active {
+    background-color: variables.$basic-green-darknes;
+    color: rgba(variables.$white, 0.3);
+  }
+
+  &:disabled {
+    background-color: variables.$special_grey-medium;
+    cursor: default;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &--center {
+    width: 100%;
+    max-width: 458px;
+    align-self: center;
+  }
+
+  &--catalog {
+    @include mixins.mobile {
+      min-height: 40px;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include mixins.tablet {
+      min-height: 40px;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &--show-more {
+    background-color: variables.$basic-gray;
+    color: variables.$special-grey-dark;
+
+    &:hover {
+      background-color: variables.$special-grey-lightnes;
+    }
+
+    &:active {
+      background-color: variables.$special-grey-lightnes;
+      color: rgba(variables.$special-grey-dark, 0.3);
+    }
+  }
+}
+
+a.button:not([href]) {
+  background-color: variables.$special_grey-medium;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}

@@ -1,0 +1,39 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.map {
+  @include mixins.map-height;
+  position: relative;
+}
+
+.map__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.map__interactive {
+  @include mixins.map-height;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  //margin-bottom: -5px;
+  position: relative;
+  border: 0;
+  z-index: 3;
+
+  @include mixins.mobile {
+    height: 362px;
+  }
+
+  @include mixins.tablet {
+    height: 400px;
+  }
+}

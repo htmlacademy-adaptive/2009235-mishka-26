@@ -1,1 +1,38 @@
-// Начните писать стили здесь
+/*components*/
+@use "./libs/variables.scss";
+@use "./libs/mixins.scss";
+@use "./libs/animation.scss";
+@use "./global/fonts.scss";
+@use "./global/utils.scss";
+@use "./components/logo.scss";
+@use "./components/button.scss";
+@use "./components/input.scss";
+/*blocks*/
+/*PAGE*/
+@use "./blocks/page.scss";
+/*HEAADER*/
+@use "./blocks/header/header.scss";
+@use "./blocks/header/main-nav.scss";
+@use "./blocks/header/site-list.scss";
+/*MAIN*/
+@use "./blocks/main/main.scss";
+/*index*/
+@use "./blocks/main/introduction.scss";
+@use "./blocks/main/fit.scss";
+@use "./blocks/main/work.scss";
+@use "./blocks/main/live.scss";
+@use "./blocks/main/slider.scss";
+/*form*/
+@use "./blocks/main/program.scss";
+@use "./blocks/main/form.scss";
+/*ctalog*/
+@use "./blocks/main/catalog.scss";
+@use "./blocks/main/accompaniment.scss";
+/*location*/
+@use "./blocks/main/contacts.scss";
+@use "./blocks/main/location.scss";
+@use "./blocks/main/map.scss";
+/*FOOTER*/
+@use "./blocks/footer/footer.scss";
+@use "./blocks/footer/social.scss";
+@use "./blocks/footer/copyright.scss";

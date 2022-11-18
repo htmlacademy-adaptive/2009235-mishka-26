@@ -1,0 +1,47 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.location {
+  position: relative;
+  background-color: variables.$basic-gray;
+
+  &--index {
+    background-color: variables.$white;
+  }
+
+  @include mixins.desktop {
+    & .page__container {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.location__contacts {
+  max-width: 1220px;
+  margin: 0 auto;
+
+  @include mixins.mobile {
+    padding: 26px 0;
+  }
+
+  @include mixins.tablet {
+    padding: 56px 40px;
+    padding-bottom: 62px;
+  }
+
+  @include mixins.desktop {
+    position: absolute;
+    z-index: 4;
+    top: 95px;
+    left: 0;
+    padding: 60px 80px;
+    padding-right: 70px;
+    max-width: 565px;
+  }
+}

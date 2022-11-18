@@ -1,0 +1,122 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+@use "../../libs/animation.scss";
+
+.main-nav__toggle {
+  cursor: pointer;
+  font: inherit;
+  display: block;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  right: 0;
+  top: 0;
+  padding: 24px 20px;
+  width: 24px;
+  height: 16px;
+  position: absolute;
+  z-index: 2;
+  transition: variables.$transition-all;
+  color: variables.$black;
+  box-sizing: content-box;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &--closed::before {
+    content: "";
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 24px;
+    height: 1.5px;
+    background-color: variables.$black;
+    box-shadow: 0 8px 0 0 variables.$black, 0 -8px 0 0 variables.$black;
+  }
+
+  &--opened::before,
+  &--opened::after {
+    @include mixins.centered;
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 1.5px;
+    background-color: variables.$black;
+    box-shadow: none;
+  }
+
+  &--opened::after {
+    transform: rotate(45deg);
+  }
+
+  &--opened::before {
+    transform: rotate(-45deg);
+  }
+
+  @include mixins.tablet {
+    display: none;
+  }
+}
+
+.main-nav__wrapper {
+  @include mixins.mobile {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    transform-origin: 0 0;
+    visibility: hidden;
+    transform: scaleY(0);
+
+    &--opened {
+      animation-name: menu-open;
+    }
+
+    &--closed {
+      animation-name: menu-close;
+    }
+  }
+
+  @include mixins.tablet {
+    position: static;
+  }
+}
+
+.main-nav__list {
+  display: flex;
+
+  @include mixins.mobile {
+    flex-direction: column;
+  }
+
+  @include mixins.tablet {
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: flex-end;
+  }
+}
+
+@include mixins.mobile {
+  .main-nav--no-js {
+    .main-nav__toggle {
+      visibility: hidden;
+    }
+
+    .main-nav__wrapper {
+      visibility: visible;
+      transform: scaleY(1);
+      position: static;
+      margin-left: -20px;
+      width: calc(100% + 40px);
+    }
+  }
+}

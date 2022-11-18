@@ -1,12 +1,238 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Academy: Мишка</title>
+
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/apple.png">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <link rel="preload" href="./fonts/opensans.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/opensansbold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/opensans.woff" type="font/woff" as="font" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/opensansbold.woff" type="font/woff" as="font" crossorigin="anonymous">
+
+    <meta name="keywords" content="HTML Academy, Мишка, Mishka">
+    <meta name="description" content="Главная страница проекта">
   </head>
-  <body>
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/adaptive">HTML и CSS. Адаптивная вёрстка и автоматизация</a>».</p>
+  <body class="page__body">
+    <header class="header">
+      <div class="page__container header__container">
+        <a class="header__logo logo" href="index.html">
+          <picture>
+            <source media="(min-width: 1300px)" srcset="img/logotype-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/logotype-tablet.svg">
+            <img class="header__logo-image" src="img/logotype-mobile.svg" width="34" height="38" alt="Магазин «Мишка».">
+          </picture>
+        </a>
+    
+        <nav class="main-nav main-nav--no-js">
+          <button class="main-nav__toggle main-nav__toggle--closed" type="button">
+            <span class="visually-hidden">Открыть или закрыть навигационное меню</span>
+          </button>
+    
+          <div class="main-nav__wrapper">
+            <ul class="main-nav__list site-list">
+              <li class="site-list__item">
+                <a href="calalog.html">Каталог товаров</a>
+              </li>
+              <li class="site-list__item">
+                <a href="form.html">Вязание на заказ</a>
+              </li>
+            </ul>
 
+            <ul class="main-nav__list user-list">
+              <li class="user-list__item">
+                <a class="user-list__login" href="#">
+                  <span>Поиск по сайту</span>
+                </a>
+              </li>
+              <li class="user-list__item">
+                <a href="#">Корзина: пока пуста</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+
+    <main class="main">
+      <h1 class="visually-hidden">Главная страница</h1>
+
+      <section class="introduction">
+        <div class="page__container introduction__container">
+          <div class="introduction__header">
+            <ul class="introduction__site-list site-list">
+              <li class="site-list__item">
+                <a href="calalog.html">Каталог товаров</a>
+              </li>
+              <li class="site-list__item">
+                <a href="form.html">Вязание на заказ</a>
+              </li>
+              <li class="site-list__item">
+                <a href="#">Новые поступления</a>
+              </li>
+              <li class="site-list__item">
+                <a href="#">Распродажа</a>
+              </li>
+            </ul>
+
+            <p class="introduction__">Бесплатная доставка по России</p>
+          </div>
+
+          <h2 class="introduction__title">Милые штуки ручной работы для дома</h2>
+          <ul class="introduction__list products-type-list">
+            <li class="products-type-list__item">Предметы <br>интерьера</li>
+            <li class="products-type-list__item">Детские <br>игрушки</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="week-product">
+        <div class="page__container fit__container">
+          <h2 class="visually-hidden">Варианты питания</h2>
+          <ul class="fit__list">
+            <li class="fit__item">
+              <div class="fit__image fit__image--slim"></div>
+              <h3 class="fit__title">Похудение</h3>
+              <p class="fit__paragraph">Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.</p>
+              <a class="fit__link" href="calalog.html">Каталог slim</a>
+            </li>
+            <li class="fit__item">
+              <div class="fit__image fit__image--pro"></div>
+              <h3 class="fit__title">Набор массы</h3>
+              <p class="fit__paragraph">Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!</p>
+              <a class="fit__link" href="calalog.html">Каталог pro</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="work">
+        <div class="page__container work__container">
+            <h2 class="work__title">Как это работает</h2>
+            <ul class="work__list">
+              <li class="work__item work__item--sheet">
+                <p class="work__paragraph">Функциональное питание содержит только полезные питательные вещества.</p>
+              </li>
+              <li class="work__item work__item--flask">
+                <p class="work__paragraph">Выпускается в виде порошка, который нужно лишь залить кипятком и готово.</p>
+              </li>
+              <li class="work__item work__item--cutlery">
+                <p class="work__paragraph">Замените один-два приема обычной еды на наше функциональное питание.</p>
+              </li>
+              <li class="work__item work__item--watch">
+                <p class="work__paragraph">Уже через месяц наслаждайтесь изменениями к лучшему&thinsp;<br>вашего питомца!</p>
+              </li>
+            </ul>
+        </div>
+      </section>
+
+      <section class="live">
+        <div class="page__container live__container">
+            <h2 class="live__title">Живой пример</h2>
+            <p class="live__paragraph">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
+
+            <dl class="live__characteristics">
+              <div class="live__characteristic">
+                <dt>снижение веса</dt>
+                <dd>5 кг</dd>
+              </div>
+              <div class="live__characteristic">
+                <dt>затрачено времени</dt>
+                <dd>60 дней</dd>
+              </div>
+            </dl>
+
+            <p class="live__price">Затраты на питание:
+              <span>15&nbsp;000&nbsp;руб.</span>
+            </p>
+
+            <div class="live__slider slider">
+              <div class="slider__image-wrapper slider__image-wrapper--before" style="width: 50%;">
+                <picture>
+                  <source type="image/webp" srcset="img/slider-fat-cat@1x.webp 1x, img/slider-fat-cat@2x.webp 2x">
+                  <img class="slider__image slider__image--before" src="img/slider-fat-cat@1x.png" srcset="img/slider-fat-cat@2x.png 2x" alt="Котейка до.">
+                </picture>
+              </div>
+
+              <div class="slider__image-wrapper slider__image-wrapper--after" style="width: 50%;">
+                <picture>
+                  <source type="image/webp" srcset="img/slider-skinny-cat@1x.webp 1x, img/slider-skinny-cat@2x.webp 2x">
+                  <img class="slider__image slider__image--after" src="img/slider-skinny-cat.png@1x.png" srcset="img/slider-skinny-cat@2x.png 2x" alt="Котейка после.">
+                </picture>
+              </div>
+
+              <button class="slider__button" type="button" style="left: 50%;">
+                <span class="visually-hidden">Изменить видимую часть изображения</span>
+                <span class="slider__toggle">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="18" viewBox="0 0 24 18">
+                    <path d="M8 0 0 9l8 9V0ZM24 9l-8-9v18l8-9Z" fill="CurrentColor"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+        </div>
+      </section>
+
+      
+    </main>
+
+    <footer class="footer">
+      <div class="page__container footer__container">
+        <a class="footer__logo" href="#">
+          <svg class="footer__logo-img" width="128" height="24" role="img" aria-label="Mishka.">
+            <use href="img/sprite.svg#logo-title"></use>
+          </svg>
+        </a>
+    
+        <div class="footer__social social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
+                <span class="visually-hidden">Вконтакте</span>
+                <svg aria-hidden="true" focusable="false" width="27" height="17">
+                  <use href="img/sprite.svg#vkontakte"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--youtube" href="https://www.youtube.com/user/htmlacademyru">
+                <span class="visually-hidden">Ютуб</span>
+                <svg aria-hidden="true" focusable="false" width="24" height="19">
+                  <use href="img/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--telegram" href="https://t.me/htmlacademy">
+                <span class="visually-hidden">Телеграм</span>
+                <svg aria-hidden="true" focusable="false" width="20" height="18">
+                  <use href="img/sprite.svg#telegram"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+    
+        <div class="footer__copyright copyright">
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
+            <span class="visually-hidden">Разработано в</span>
+            <span>HTML Academy</span>
+            <svg class="copyright__link-icon" width="27" height="34">
+              <use href="img/sprite.svg#htmlacademy"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/scripts.min.js"></script>
   </body>
 </html>

@@ -1,0 +1,171 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.introduction {
+  position: relative;
+
+  @include mixins.desktop {
+    margin-top: -147px;
+  }
+}
+
+.introduction__container {
+  @include mixins.mobile {
+    display: flex;
+    flex-direction: column;
+    padding-top: 27px;
+    padding-bottom: 10px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 29px;
+    padding-left: 117px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 223px;
+    padding-left: 80px;
+    padding-bottom: 185px;
+  }
+}
+
+.introduction__title {
+  @include mixins.header-2;
+
+  @include mixins.mobile {
+    color: variables.$white;
+    text-align: center;
+    line-height: 36px;
+  }
+
+  @include mixins.tablet {
+    max-width: 450px;
+  }
+}
+
+.introduction__paragraph {
+  text-transform: uppercase;
+
+  @include mixins.mobile {
+    color: variables.$white;
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+    margin-top: 25px;
+    margin-bottom: 29px;
+  }
+
+  @include mixins.tablet {
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 41px;
+    margin-bottom: 49px;
+  }
+
+  @include mixins.desktop {
+    margin-top: 40px;
+    margin-bottom: 52px;
+    max-width: 450px;
+  }
+}
+
+.introduction__button {
+  @include mixins.mobile {
+    order: 3;
+    margin-top: 3px;
+    min-height: 40px;
+  }
+
+  @include mixins.tablet {
+    position: relative;
+    z-index: 2;
+    min-height: 54px;
+    width: 244px;
+    margin-left: 3px;
+  }
+
+  @include mixins.desktop {
+    width: 244px;
+    margin: 0;
+  }
+}
+
+.introduction__product-image {
+  display: block;
+
+  @include mixins.mobile {
+    width: 280px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  @include mixins.tablet {
+    min-width: 708px;
+    min-height: 609px;
+    margin: 0;
+    margin-left: -87px;
+    margin-top: -83px;
+  }
+
+  @include mixins.desktop {
+    position: absolute;
+    min-width: auto;
+    min-height: auto;
+    top: 224px;
+    left: 50%;
+    transform: translateX(-75px);
+  }
+}
+
+.introduction__background {
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-color: #4f4f54;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: variables.$basic-green;
+    opacity: 0.85;
+  }
+
+  @include mixins.mobile {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 302px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../img/index-background-mobile@1x.jpg");
+    background-position: center;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/index-background-mobile@2x.jpg");
+    }
+  }
+
+  @include mixins.tablet {
+    display: none;
+  }
+
+  @include mixins.desktop {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-image: url("../img/index-background-desktop@1x.jpg");
+    background-position: right;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/index-background-desktop@2x.jpg");
+    }
+  }
+}
