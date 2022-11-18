@@ -1,4 +1,4 @@
-# Личный проект «Кэт энерджи»
+# Личный проект «Мишка»
 
 * Студент: [PolinaT](https://up.htmlacademy.ru/adaptive/26/user/2009235).
 * Наставник: [Борис Слонов](https://htmlacademy.ru/profile/id1130303).
