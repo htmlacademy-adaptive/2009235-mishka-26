@@ -1,0 +1,110 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user-list__item {
+  display: block;
+  position: relative;
+
+  @include mixins.mobile {
+    &:first-child a {
+      border-top: 1px solid variables.$special-grey;
+    }
+  }
+
+  @include mixins.tablet {
+    &--active a::before {
+      position: absolute;
+      right: 17.5px;
+      left: 17.5px;
+      bottom: 2px;
+      height: 2px;
+      background-color: variables.$basic-green;
+      content: "";
+    }
+  }
+}
+
+.user-list__item a {
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  color: variables.$black;
+  fill: rgba(variables.$black, 0.2);
+  position: relative;
+  transition: variables.$transition-all;
+
+  @include mixins.mobile {
+    background-color: variables.$white;
+    border-bottom: 1px solid variables.$special-grey;
+    padding: 27px;
+    padding-left: 75px;
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  @include mixins.tablet {
+    background-color: transparent;
+    padding: 32px 30px;
+    padding-right: 50px;
+    font-size: 17px;
+    line-height: 24px;
+    min-height: 88px;
+    box-shadow: 1px -1px 0 0 variables.$special-grey2, inset 0 -1px 0 0 variables.$special-grey2, inset 1px 0 0 0 variables.$special-grey2;
+  }
+
+  &:hover {
+    color: rgba(variables.$black, 0.6);
+    fill: rgba(variables.$basic-green, 1);
+  }
+
+  &:active {
+    color: rgba(variables.$black, 0.3);
+    fill: rgba(variables.$basic-green, 0.3);
+  }
+}
+
+.user-list__item svg {
+  fill: inherit;
+  width: 21px;
+  height: 18px;
+
+  @include mixins.mobile {
+    position: absolute;
+    left: 30px;
+  }
+
+  @include mixins.tablet {
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+  }
+}
+
+.user-list__item svg + span {
+  @include mixins.tablet {
+    margin-left: 50px;
+  }
+}
+
+.user-list__login {
+  @include mixins.tablet {
+    min-width: 83px;
+
+    & span {
+      position: absolute;
+      opacity: 0;
+    }
+
+    & svg {
+      @include mixins.centered;
+    }
+  }
+}

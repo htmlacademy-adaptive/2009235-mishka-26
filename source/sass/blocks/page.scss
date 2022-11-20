@@ -19,15 +19,15 @@
 }
 
 .page__container {
-  max-width: 1050px;
   margin: 0 auto;
+  max-width: 1050px;
 
   @include mixins.mobile {
-    padding: 0 20px;
+    padding: 0 variables.$padding-container-mobile;
   }
 
   @include mixins.tablet {
-    padding: 0 30px;
+    padding: 0 variables.$padding-container-tablet;
   }
 
   @include mixins.desktop {

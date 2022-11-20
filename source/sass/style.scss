@@ -4,7 +4,6 @@
 @use "./libs/animation.scss";
 @use "./global/fonts.scss";
 @use "./global/utils.scss";
-@use "./components/logo.scss";
 @use "./components/button.scss";
 @use "./components/input.scss";
 /*blocks*/
@@ -14,6 +13,7 @@
 @use "./blocks/header/header.scss";
 @use "./blocks/header/main-nav.scss";
 @use "./blocks/header/site-list.scss";
+@use "./blocks/header/user-list.scss";
 /*MAIN*/
 @use "./blocks/main/main.scss";
 /*index*/

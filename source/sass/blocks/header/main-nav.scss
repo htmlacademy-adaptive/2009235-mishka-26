@@ -11,14 +11,13 @@
   margin: 0;
   right: 0;
   top: 0;
-  padding: 24px 20px;
-  width: 24px;
-  height: 16px;
+  padding: 0;
+  aspect-ratio: 1/1;
+  height: 100%;
   position: absolute;
   z-index: 2;
   transition: variables.$transition-all;
   color: variables.$black;
-  box-sizing: content-box;
 
   &:hover {
     opacity: 0.6;
@@ -31,13 +30,13 @@
   &--closed::before {
     content: "";
     position: absolute;
-    top: 48%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%);
-    width: 24px;
-    height: 1.5px;
-    background-color: variables.$black;
-    box-shadow: 0 8px 0 0 variables.$black, 0 -8px 0 0 variables.$black;
+    width: 20px;
+    height: 2px;
+    background-color: variables.$special-grey-darknes;
+    box-shadow: 0 6px 0 0 variables.$black, 0 -6px 0 0 variables.$black;
   }
 
   &--opened::before,
@@ -46,7 +45,7 @@
     content: "";
     position: absolute;
     width: 25px;
-    height: 1.5px;
+    height: 2px;
     background-color: variables.$black;
     box-shadow: none;
   }
@@ -89,6 +88,18 @@
   @include mixins.tablet {
     position: static;
   }
+
+  @include mixins.desktop {
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    grid-auto-flow: dense;
+
+    &::before {
+      content: " ";
+      display: block;
+      grid-column: 2/3;
+    }
+  }
 }
 
 .main-nav__list {
@@ -96,11 +107,14 @@
 
   @include mixins.mobile {
     flex-direction: column;
+
+    & + & {
+      margin-top: -1px;
+    }
   }
 
   @include mixins.tablet {
     flex-wrap: wrap;
-    align-items: baseline;
     justify-content: flex-end;
   }
 }
@@ -115,8 +129,8 @@
       visibility: visible;
       transform: scaleY(1);
       position: static;
-      margin-left: -20px;
-      width: calc(100% + 40px);
+      margin-left: -(variables.$padding-container-mobile);
+      width: calc(100% + (variables.$padding-container-mobile * 2));
     }
   }
 }
