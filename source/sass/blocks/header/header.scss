@@ -5,7 +5,7 @@
   background-color: variables.$white;
 
   @include mixins.mobile {
-    min-height: 65px;
+    min-height: 79px;
   }
 
   @include mixins.desktop {
@@ -13,33 +13,11 @@
   }
 }
 
-.header--index {
-  @include mixins.desktop {
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      display: block;
-      top: 0;
-      left: 50%;
-      width: 50%;
-      height: 100%;
-      background-color: #65a83e;
-    }
-  }
-}
-
 .header__container {
   @include mixins.mobile {
     position: relative;
     z-index: 3;
-    border-bottom: 1px solid variables.$special-grey-lightnes;
-
-    .header--index & {
-      border: none;
-    }
+    border-bottom: 1px solid variables.$special-grey;
   }
 
   @include mixins.tablet {
@@ -59,9 +37,6 @@
 }
 
 .header__logo {
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
   flex-shrink: 0;
 
   @include mixins.mobile {
@@ -82,13 +57,13 @@
 
 .header__logo-image {
   @include mixins.mobile {
-    width: 34px;
-    height: 38px;
+    width: 86px;
+    height: 35px;
   }
 
   @include mixins.tablet {
-    width: 61px;
-    height: 51px;
+    width: 114px;
+    height: 46px;
   }
 
   @include mixins.desktop {
