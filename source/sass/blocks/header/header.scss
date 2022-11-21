@@ -16,7 +16,7 @@
   @include mixins.tablet {
     display: flex;
     justify-content: space-between;
-    box-shadow: inset 0 -1px 0 0 variables.$special-grey2, 1px 0 0 0 variables.$special-grey2, -1px 0 0 0 variables.$special-grey2;
+    box-shadow: inset 0 -1px 0 0 variables.$special-grey2, -1px 0 0 0 variables.$special-grey2;
     padding-right: 0;
   }
 

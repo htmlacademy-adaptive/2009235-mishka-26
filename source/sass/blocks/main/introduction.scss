@@ -3,21 +3,30 @@
 
 .introduction {
   position: relative;
+  overflow-x: hidden;
+  background-color: variables.$special-grey3;
 }
 
 .introduction__container {
   @include mixins.mobile {
-    padding-top: 1px;
+    padding-top: 73px;
   }
+}
 
-  @include mixins.tablet {
-    padding-top: 29px;
-    padding-left: 117px;
+.introduction__header {
+  @include mixins.mobile {
+    display: none;
   }
+}
 
-  @include mixins.desktop {
-    padding-top: 223px;
-    padding-left: 80px;
-    padding-bottom: 185px;
+.introduction__title {
+  @include mixins.header-1;
+}
+
+.introduction__list {
+  @include mixins.mobile {
+    margin: 0;
+    margin-left: -(variables.$padding-container-mobile);
+    margin-right: -(variables.$padding-container-mobile);
   }
 }

@@ -1,0 +1,37 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.products-type-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+
+  @include mixins.tablet {
+    margin: 0;
+  }
+}
+
+.products-type-list__item {
+  display: block;
+  color: variables.$white;
+  font: inherit;
+  font-weight: 700;
+  background-color: variables.$basic-green;
+  position: relative;
+
+  &:nth-child(2n+2) {
+    background-color: variables.$basic-green-dark2;
+  }
+
+  @include mixins.mobile {
+    font-size: 19px;
+    line-height: 24px;
+    padding: 25px 160px 30px 30px;
+  }
+
+  @include mixins.tablet {
+    font-size: 20px;
+    line-height: 30px;
+    padding: 25px 160px 35px 35px;
+  }
+}

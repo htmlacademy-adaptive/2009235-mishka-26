@@ -18,9 +18,32 @@
   }
 }
 
+@mixin header-1 {
+  font: inherit;
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+
+  @include mobile {
+    font-size: 27px;
+    line-height: 30px;
+  }
+
+  @include tablet {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @include desktop {
+    font-size: 53px;
+    line-height: 57px;
+  }
+}
+
 @mixin header-2 {
   font: inherit;
   margin: 0;
+  font-weight: 700;
 
   @include mobile {
     font-size: 25px;
@@ -36,6 +59,7 @@
 @mixin header-3 {
   font: inherit;
   margin: 0;
+  font-weight: 700;
 
   @include mobile {
     font-size: 17px;
@@ -48,9 +72,10 @@
   }
 }
 
-@mixin header-4 {
+@mixin header-4 { //--
   font: inherit;
   margin: 0;
+  font-weight: 700;
 
   @include mobile {
     font-size: 17px;
