@@ -3,6 +3,10 @@
 
 .header {
   background-color: variables.$white;
+
+  @include mixins.tablet {
+    box-shadow: inset 0 -1px 0 0 variables.$special-grey2;
+  }
 }
 
 .header__container {
