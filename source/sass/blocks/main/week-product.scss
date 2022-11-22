@@ -1,0 +1,124 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.week_product__container {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 23px;
+    background-image: url("../img/zigzag-gray.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+
+    @include mixins.mobile {
+      width: calc(100% + (variables.$padding-container-mobile));
+      left: -(variables.$padding-container-mobile);
+    }
+
+    @include mixins.tablet {
+      width: calc(100% + (variables.$padding-container-tablet));
+      left: -(variables.$padding-container-tablet);
+    }
+
+    @include mixins.desktop {
+      width: 100%;
+      right: 0;
+      left: 0;
+    }
+  }
+
+  @include mixins.mobile {
+    display: flex;
+    flex-direction: column;
+    padding-top: 31px;
+    padding-bottom: 42px;
+  }
+}
+
+.week-product__title {
+  @include mixins.header-2;
+  position: relative;
+
+  @include mixins.mobile {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 17px;
+  }
+
+  &::before {
+    content: "Товар недели";
+    display: block;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: variables.$basic-green;
+
+    @include mixins.mobile {
+      margin-top: 4px;
+    }
+
+    @include mixins.tablet {
+      text-align: center;
+      line-height: 17px;
+    }
+  }
+}
+
+.week_product__paragraph {
+  @include mixins.paragraph;
+
+  @include mixins.mobile {
+    margin-bottom: 20px;
+  }
+}
+
+.week-product__characteristics {
+  margin: 0;
+  color: variables.$special-grey-dark;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  line-height: 20px;
+
+  @include mixins.mobile {
+    margin-bottom: 28px;
+  }
+
+  & div {
+    display: grid;
+    grid-template-columns: 80px auto;
+    column-gap: 20px;
+    padding: 12px 0;
+    padding-top: 8px;
+    border-bottom: 1px solid variables.$special-grey;
+  }
+
+  & dd {
+    margin: 0;
+  }
+}
+
+.week-product__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.week-product__price {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  text-align: center;
+  color: variables.$special-grey-dark;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.week-product__button {
+  margin-top: 15px;
+}

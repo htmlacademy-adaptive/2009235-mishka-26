@@ -48,6 +48,11 @@
   @include mixins.tablet {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 90px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 95px;
   }
 }
 
@@ -68,10 +73,17 @@
   line-height: 24px;
   text-decoration: none;
   color: variables.$black;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .introduction__paragraph {
-  font: inherit;
   font-size: 15px;
   line-height: 24px;
   color: variables.$special-grey-dark;
@@ -88,10 +100,12 @@
   }
 
   @include mixins.tablet {
+    margin-top: 90px;
     margin-bottom: 372px;
   }
 
   @include mixins.desktop {
+    margin-top: 95px;
     margin-bottom: 355px;
   }
 }
