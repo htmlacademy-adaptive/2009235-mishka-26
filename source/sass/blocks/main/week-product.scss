@@ -2,40 +2,30 @@
 @use "../../libs/mixins.scss";
 
 .week_product__container {
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    height: 23px;
-    background-image: url("../img/zigzag-gray.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-
-    @include mixins.mobile {
-      width: calc(100% + (variables.$padding-container-mobile));
-      left: -(variables.$padding-container-mobile);
-    }
-
-    @include mixins.tablet {
-      width: calc(100% + (variables.$padding-container-tablet));
-      left: -(variables.$padding-container-tablet);
-    }
-
-    @include mixins.desktop {
-      width: 100%;
-      right: 0;
-      left: 0;
-    }
-  }
+  @include mixins.zigzag-gray;
 
   @include mixins.mobile {
     display: flex;
     flex-direction: column;
     padding-top: 31px;
     padding-bottom: 42px;
+  }
+
+  @include mixins.tablet {
+    display: grid;
+    grid-template-columns: auto 50%;
+    grid-auto-flow: dense;
+    column-gap: 42px;
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+
+  @include mixins.desktop {
+    grid-template-columns: auto 60%;
+    padding-left: 175px;
+    column-gap: 58px;
+    padding-top: 55px;
+    padding-bottom: 95px;
   }
 }
 
@@ -47,6 +37,17 @@
     display: flex;
     flex-direction: column-reverse;
     margin-bottom: 17px;
+  }
+
+  @include mixins.tablet {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    margin-bottom: 37px;
+  }
+
+  @include mixins.desktop {
+    margin-top: 60px;
+    margin-bottom: 35px;
   }
 
   &::before {
@@ -65,6 +66,14 @@
     @include mixins.tablet {
       text-align: center;
       line-height: 17px;
+      position: absolute;
+      width: 100px;
+      right: 0;
+      top: 10px;
+    }
+
+    @include mixins.desktop {
+      right: calc(100% + 45px);
     }
   }
 }
@@ -74,6 +83,14 @@
 
   @include mixins.mobile {
     margin-bottom: 20px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 45px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 55px;
   }
 }
 
@@ -87,6 +104,14 @@
 
   @include mixins.mobile {
     margin-bottom: 28px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 55px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 110px;
   }
 
   & div {
@@ -109,6 +134,20 @@
   height: auto;
 }
 
+.week_product__container picture {
+  @include mixins.tablet {
+    grid-column: 2 / -1;
+    grid-row: 2 / 6;
+    align-self: end;
+  }
+
+  @include mixins.desktop {
+    grid-column: 2 / -1;
+    grid-row: 1 / 6;
+    align-self: start;
+  }
+}
+
 .week-product__price {
   font-weight: 700;
   font-size: 17px;
@@ -117,8 +156,18 @@
   color: variables.$special-grey-dark;
   margin-top: 25px;
   margin-bottom: 10px;
+
+  @include mixins.tablet {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
 }
 
 .week-product__button {
   margin-top: 15px;
+
+  @include mixins.tablet {
+    margin: 0;
+    align-self: end;
+  }
 }

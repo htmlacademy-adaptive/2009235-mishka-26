@@ -54,6 +54,11 @@
     font-size: 43px;
     line-height: 50px;
   }
+
+  @include desktop {
+    font-size: 53px;
+    line-height: 57px;
+  }
 }
 
 @mixin header-3 {
@@ -120,6 +125,37 @@
 
   @include tablet {
     min-height: 457px;
+  }
+}
+
+@mixin zigzag-gray {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 23px;
+    background-image: url("../img/zigzag-gray.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+
+    @include mobile {
+      width: calc(100% + (variables.$padding-container-mobile));
+      left: -(variables.$padding-container-mobile);
+    }
+
+    @include tablet {
+      width: calc(100% + (variables.$padding-container-tablet));
+      left: -(variables.$padding-container-tablet);
+    }
+
+    @include desktop {
+      width: 100%;
+      right: 0;
+      left: 0;
+    }
   }
 }
 
