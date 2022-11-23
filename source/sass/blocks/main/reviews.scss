@@ -1,0 +1,81 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.reviews__container {
+  @include mixins.zigzag-gray;
+  position: relative;
+
+  @include mixins.mobile {
+    padding-top: 30px;
+    padding-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include mixins.tablet {
+    padding-top: 82px;
+    padding-bottom: 129px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 84px;
+    padding-bottom: 190px;
+    padding-left: 175px;
+  }
+}
+
+.reviews__title {
+  @include mixins.header-2;
+
+  @include mixins.mobile {
+    margin-bottom: 14px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 38px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 35px;
+  }
+}
+
+.reviews__text {
+  @include mixins.paragraph;
+
+  @include mixins.mobile {
+    margin-bottom: 33px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 61px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 44px;
+  }
+}
+
+.reviews__item {
+  margin: 0;
+}
+
+.reviews__author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews__author-name {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  font-style: normal;
+}
+
+.reviews__author-mail {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 30px;
+  font-style: normal;
+  color: variables.$special-grey-dark;
+}
