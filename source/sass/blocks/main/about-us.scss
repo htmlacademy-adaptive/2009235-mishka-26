@@ -1,44 +1,32 @@
 @use "../../libs/variables.scss";
 @use "../../libs/mixins.scss";
 
-.work {
+.about-us__container {
   @include mixins.mobile {
-    margin-top: 21px;
-    margin-bottom: 48px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   @include mixins.tablet {
-    margin-top: 45px;
-    margin-bottom: 0;
+    padding-top: 60px;
+    padding-bottom: 41px;
   }
 
   @include mixins.desktop {
-    margin-top: 71px;
-    margin-bottom: 61px;
+    padding-top: 68px;
+    padding-bottom: 84px;
   }
 }
 
-.work__container {
-  @include mixins.tablet {
-    padding-bottom: 46px;
-    border-bottom: 1px solid variables.$special-grey;
-  }
-
-  @include mixins.desktop {
-    padding-bottom: 0;
-    border: none;
-  }
-}
-
-.work__title {
+.about-us__title {
   @include mixins.header-2;
 
   @include mixins.mobile {
-    margin-bottom: 40px;
+    margin-bottom: 28px;
   }
 
   @include mixins.tablet {
-    margin-bottom: 32px;
+    margin-bottom: 41px;
   }
 
   @include mixins.desktop {
@@ -46,18 +34,17 @@
   }
 }
 
-.work__list {
+.about-us__list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  counter-reset: work-counter;
 
   @include mixins.mobile {
-    gap: 20px;
+    gap: 24px;
   }
 
-  @include mixins.tablet {
+  /*@include mixins.tablet {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 135px;
     row-gap: 37px;
@@ -68,17 +55,16 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 78px;
     margin-right: 0;
-  }
+  }*/
 }
 
-.work__item {
+.about-us__item {
   display: grid;
   justify-items: start;
   position: relative;
 
   @include mixins.mobile {
-    grid-template-columns: 60px auto;
-    gap: 20px;
+    gap: 21px;
   }
 
   @include mixins.tablet {
@@ -97,20 +83,11 @@
   &::before {
     content: "";
     display: block;
-    aspect-ratio: 1 / 1;
-    background-color: variables.$basic-green;
+    width: 55px;
+    height: 38px;
     background-size: initial;
     background-position: center;
     background-repeat: no-repeat;
-    align-self: start;
-
-    @include mixins.mobile {
-      width: 60px;
-    }
-
-    @include mixins.tablet {
-      width: 80px;
-    }
   }
 
   &--sheet::before {
@@ -128,36 +105,5 @@
 
   &--watch::before {
     background-image: url("../img/work-watch.svg");
-  }
-
-  &::after {
-    @include mixins.tablet {
-      counter-increment: work-counter;
-      content: counter(work-counter);
-      font-size: 280px;
-      line-height: 280px;
-      color: variables.$basic-gray;
-      position: absolute;
-      min-width: 130px;
-      right: 0;
-      top: 0;
-      z-index: -1;
-    }
-
-    @include mixins.desktop {
-      top: -7px;
-    }
-  }
-}
-
-.work__paragraph {
-  @include mixins.paragraph;
-  color: variables.$special-grey-dark;
-  align-self: center;
-
-  @include mixins.mobile {
-    & br {
-      display: none;
-    }
   }
 }
