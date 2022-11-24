@@ -4,12 +4,12 @@
 
   ymaps.ready(init);
   function init() {
-    var desktop_width = 1280;
+    var desktop_width = 1150;
     var tablet_width = 768;
 
     var myMap = new ymaps.Map('map', {
-      center: [59.938635, 30.323118],
-      zoom: 15,
+      center: [59.938788, 30.323126],
+      zoom: 16.5,
       controls: []
     });
 
@@ -17,9 +17,9 @@
       hintContent: 'Мы тут'
       }, {
       iconLayout: 'default#image',
-      iconImageHref: 'img/map-marker@2x.png',
-      iconImageSize: [113, 106],
-      iconImageOffset: [-50, -106]
+      iconImageHref: 'img/map-pin.svg',
+      iconImageSize: [67, 101],
+      iconImageOffset: [-30, -100]
     });
 
     myMap.geoObjects.add(myPlacemark);
@@ -28,27 +28,15 @@
     window.addEventListener('resize', start);
     function start() {
       if (document.documentElement.clientWidth >= desktop_width) {
-        myMap.setCenter([59.938802, 30.319973], 16,);
-        myPlacemark.options.set({
-          iconImageSize: [113, 106],
-          iconImageOffset: [-50, -106]
-        });
+        myMap.setCenter([59.938788, 30.323126], 16,);
       }
 
       else if (document.documentElement.clientWidth < desktop_width && document.documentElement.clientWidth >= tablet_width) {
-        myMap.setCenter([59.938635, 30.323118], 15,);
-        myPlacemark.options.set({
-          iconImageSize: [113, 106],
-          iconImageOffset: [-50, -106]
-        });
+        myMap.setCenter([59.938788, 30.323126], 16.5,);
       }
 
       else {
-        myMap.setCenter([59.938635, 30.323118], 14,);
-        myPlacemark.options.set({
-          iconImageSize: [57, 53],
-          iconImageOffset: [-25, -50]
-        });
+        myMap.setCenter([59.938788, 30.323126], 17.3,);
       }
     }
   }

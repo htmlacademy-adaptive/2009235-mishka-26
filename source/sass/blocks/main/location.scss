@@ -1,47 +1,107 @@
 @use "../../libs/variables.scss";
 @use "../../libs/mixins.scss";
 
-.location {
-  position: relative;
-  background-color: variables.$basic-gray;
+.location__container {
+  @include mixins.mobile {
+    padding-top: 38px;
+    padding-bottom: 39px;
+    display: flex;
+    flex-direction: column;
+  }
 
-  &--index {
-    background-color: variables.$white;
+  @include mixins.tablet {
+    padding-top: 68px;
+    padding-bottom: 57px;
+    display: flex;
+    flex-direction: column;
   }
 
   @include mixins.desktop {
-    & .page__container {
-      height: 100%;
-      width: 100%;
+    padding-top: 67px;
+    padding-bottom: 105px;
+    display: grid;
+    grid-template-columns: auto 60%;
+    grid-auto-flow: dense;
+    padding-left: 175px;
+  }
+}
+
+.location__title {
+  @include mixins.header-2;
+  margin-bottom: 28px;
+
+  @include mixins.tablet {
+    position: relative;
+    margin-bottom: 50px;
+
+    &::after {
+      content: "";
       position: absolute;
-      top: 0;
-      left: 0;
+      display: block;
+      width: 47px;
+      height: 81px;
+      background-image: url("../img/flag.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: 50%;
+      transform: translateY(-50%);
       right: 0;
-      bottom: 0;
+    }
+  }
+
+  @include mixins.desktop {
+    margin-top: 78px;
+    margin-bottom: 35px;
+
+    &::after {
+      right: calc(100% + 65px);
     }
   }
 }
 
 .location__contacts {
-  max-width: 1220px;
-  margin: 0 auto;
-
   @include mixins.mobile {
-    padding: 26px 0;
+    margin-bottom: 62px;
   }
 
   @include mixins.tablet {
-    padding: 56px 40px;
-    padding-bottom: 62px;
+    margin-bottom: 50px;
   }
 
   @include mixins.desktop {
-    position: absolute;
-    z-index: 4;
-    top: 95px;
-    left: 0;
-    padding: 60px 80px;
-    padding-right: 70px;
-    max-width: 565px;
+    margin-bottom: 85px;
+  }
+}
+
+.location__map {
+  @include mixins.mobile {
+    margin-left: -(variables.$padding-container-mobile);
+    margin-right: -(variables.$padding-container-mobile);
+    margin-bottom: 41px;
+  }
+
+  @include mixins.tablet {
+    margin-left: -(variables.$padding-container-tablet);
+    margin-right: -(variables.$padding-container-tablet);
+    margin-bottom: 55px;
+  }
+
+  @include mixins.desktop {
+    margin: 0;
+    grid-column: 2 / -1;
+    grid-row: 1 / 5;
+  }
+}
+
+.location__write {
+  @include mixins.tablet {
+    width: 230px;
+    align-self: center;
+  }
+
+  @include mixins.desktop {
+    width: 230px;
+    align-self: end;
+    justify-self: start;
   }
 }

@@ -192,8 +192,14 @@
           <h2 class="location__title">Контакты</h2>
 
           <div class="location__contacts contacts">
-            <a class="contacts__email" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
-            <address class="contacts__address">г. Санкт-Петербург<br>ул. Большая Конюшенная<br>д. 19/8, офис 101</address>
+            <div class="contacts__wrapper">
+              <span>e-mail:</span>
+              <a class="contacts__contact contacts__contact--href" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
+            </div>
+            <div class="contacts__wrapper">
+              <span>адрес:</span>
+              <address class="contacts__contact">г. Санкт-Петербург<br>ул. Большая Конюшенная<br>д. 19/8, офис 101</address>
+            </div>
           </div>
 
           <div class="location__map map">
@@ -210,9 +216,9 @@
               <script src="https://api-maps.yandex.ru/2.1/?apikey=c214d7f7-bb76-458f-8f7b-6523a76e9c85&lang=ru_RU" type="text/javascript"></script>
             </div>
           </div>
-        </div>
 
-        <a class="location__write button" href="#">Напишите нам</a>
+          <a class="location__write button" href="#">Напишите нам</a>
+        </div>
       </section>
     </main>
 
