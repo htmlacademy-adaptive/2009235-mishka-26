@@ -118,16 +118,6 @@
   margin: auto;
 }
 
-@mixin map-height {
-  @include mobile {
-    min-height: 320px;
-  }
-
-  @include tablet {
-    min-height: 457px;
-  }
-}
-
 @mixin zigzag-gray {
   position: relative;
 

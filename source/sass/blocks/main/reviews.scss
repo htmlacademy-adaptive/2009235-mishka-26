@@ -1,6 +1,25 @@
 @use "../../libs/variables.scss";
 @use "../../libs/mixins.scss";
 
+.reviews {
+  @include mixins.tablet {
+    background-image: url("../img/reviews-background@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 350px auto;
+  }
+
+  @media (min-resolution: 2dppx) {
+    @include mixins.tablet {
+      background-image: url("../img/reviews-background@2x.jpg");
+    }
+  }
+
+  @include mixins.desktop {
+    background-image: none;
+  }
+}
+
 .reviews__container {
   @include mixins.zigzag-gray;
   position: relative;
@@ -42,6 +61,8 @@
 
 .reviews__text {
   @include mixins.paragraph;
+  //filter: drop-shadow(0 0 1px red);
+  text-shadow: variables.$white 1px 1px, variables.$white 1px -1px, variables.$white -1px 1px, variables.$white -1px -1px;
 
   @include mixins.mobile {
     margin-bottom: 33px;
@@ -78,4 +99,18 @@
   line-height: 30px;
   font-style: normal;
   color: variables.$special-grey-dark;
+}
+
+.reviews__write {
+  @include mixins.tablet {
+    position: absolute;
+    width: 175px;
+    top: 80px;
+    right: variables.$padding-container-tablet;
+  }
+
+  @include mixins.desktop {
+    top: 84px;
+    right: 0;
+  }
 }

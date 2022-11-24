@@ -1,7 +1,7 @@
 @use "../../libs/variables.scss";
 @use "../../libs/mixins.scss";
 
-.slider__item {
+.slider__list {
   position: relative;
 }
 
@@ -22,6 +22,13 @@
       align-self: stretch;
       background-color: variables.$special-grey;
     }
+  }
+
+  @include mixins.tablet {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 175px;
   }
 }
 
@@ -54,5 +61,9 @@
 
   &:active {
     opacity: 0.3;
+  }
+
+  @include mixins.tablet {
+    background-position: center;
   }
 }
