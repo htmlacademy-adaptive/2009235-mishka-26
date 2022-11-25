@@ -55,7 +55,7 @@ const html = () => {
 const scripts = () => {
   return gulp.src('source/js/*.js')
     .pipe(concat('scripts.js')) //in one file
-    .pipe(terser())
+    //.pipe(terser())
     .pipe(rename({
       suffix: ".min"
     }))
