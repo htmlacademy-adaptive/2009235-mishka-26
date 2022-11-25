@@ -1,0 +1,19 @@
+@use "../libs/variables.scss";
+@use "../libs/mixins.scss";
+
+.size-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 7px;
+}
+
+.size-list__item {
+  flex-grow: 1;
+}
+
+.size-list__control-mark {
+  padding: 16px;
+  display: inline-flex;
+}

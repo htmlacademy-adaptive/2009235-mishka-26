@@ -31,7 +31,7 @@
   }
 
   @include mixins.tablet {
-    padding: 0 93px;
+    padding: 0 108px;
     padding-top: 38px;
     padding-bottom: 46px;
     width: 566px;
@@ -43,11 +43,13 @@
   font-size: 25px;
   line-height: 30px;
   text-align: center;
+  text-transform: uppercase;
   margin-bottom: 14px;
 
   @include mixins.tablet {
     font-size: 30px;
     line-height: 57px;
+    margin: 0 -15px;
     margin-bottom: 11px;
   }
 }
