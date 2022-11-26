@@ -130,7 +130,7 @@
             </picture>
 
             <p class="week-product__price">Цена: 990&nbsp;руб.</p>
-            <button class="week-product__button button" type="button">Заказать</button>
+            <button class="week-product__button button" type="button" id="modal-size-button">Заказать</button>
         </div>
       </section>
 
@@ -271,7 +271,7 @@
       </div>
     </footer>
 
-    <div class="modal"> <!--modal--close-->
+    <div class="modal modal--close">
       <div class="modal__container">
         <h2 class="modal__title">Добавить в корзину</h2>
 
@@ -279,7 +279,7 @@
           <fieldset class="modal__form-group">
             <legend class="modal__form-label">Выберите размер:</legend>
 
-            <ul class="size-list">
+            <ul class="modal__size-list size-list">
               <li class="size-list__item">
                 <label class="size-list__control">
                   <input class="visually-hidden size-list__control-input" type="radio" name="size" value="S" checked>

@@ -63,11 +63,7 @@
 .modal__form-group {
   border: none;
   margin: 0;
-  padding: 0 15px;
-
-  @include mixins.mobile {
-    padding: 0;
-  }
+  padding: 0;
 }
 
 .modal__form-label {

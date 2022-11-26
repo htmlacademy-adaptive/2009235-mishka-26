@@ -16,4 +16,34 @@
 .size-list__control-mark {
   padding: 16px;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: variables.$special-grey-dark;
+  text-transform: uppercase;
+  width: 100%;
+  border: 2px solid rgba(variables.$special-grey-dark, 0.1);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 16px;
+
+  &:hover {
+    border-color: rgba(variables.$special-grey-dark, 0.3);
+  }
+
+  &:active {
+    border-color: variables.$basic-green2;
+  }
+}
+
+.size-list__control-input {
+  &:checked ~ .size-list__control-mark {
+    border-color: variables.$basic-green2;
+  }
+
+  &:disabled ~ .size-list__control-mark {
+    opacity: 0.6;
+    cursor: default;
+    pointer-events: none;
+  }
 }

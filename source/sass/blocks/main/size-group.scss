@@ -1,8 +1,0 @@
-@use "../../libs/variables.scss";
-@use "../../libs/mixins.scss";
-
-.size-group {
-  @include mixins.tablet {
-    padding: 0 15px;
-  }
-}
