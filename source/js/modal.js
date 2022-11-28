@@ -19,7 +19,7 @@
       openModal(modal_window);
     })
   })
-  
+
   modal_window.addEventListener('click', function (e) {
     if (!modal_window.classList.contains('modal--close') && e.target == e.currentTarget) {
       closeModal(modal_window);
