@@ -4,9 +4,31 @@
 
   if (!modal_open_buttons.length) return;
 
-  modal_open_buttons.forEach((button) => {         
+  function openModal(modal) {
+    modal.classList.remove('modal--close');
+    document.addEventListener('keydown', closeByEscape);
+  }
+
+  function closeModal(modal) {
+    modal.classList.add('modal--close');
+    document.removeEventListener('keydown', closeByEscape);
+  }
+
+  modal_open_buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        modal_window.classList.remove('modal--close');
+      openModal(modal_window);
     })
   })
+  
+  modal_window.addEventListener('click', function (e) {
+    if (!modal_window.classList.contains('modal--close') && e.target == e.currentTarget) {
+      closeModal(modal_window);
+    }
+  });
+
+  function closeByEscape(evt) {
+    if (!modal_window.classList.contains('modal--close') && evt.key === 'Escape') {
+      closeModal(modal_window);
+    }
+  }
 })();
