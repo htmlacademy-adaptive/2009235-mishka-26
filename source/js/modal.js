@@ -26,8 +26,8 @@
     }
   });
 
-  function closeByEscape(evt) {
-    if (!modal_window.classList.contains('modal--close') && evt.key === 'Escape') {
+  function closeByEscape(e) {
+    if (!modal_window.classList.contains('modal--close') && e.key === 'Escape') {
       closeModal(modal_window);
     }
   }

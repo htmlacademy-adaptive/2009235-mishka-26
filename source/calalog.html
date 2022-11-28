@@ -98,36 +98,31 @@
 
           <ul class="catalog__list">
             <li class="catalog__card">
-              <picture class="catalog__card-image-wrapper">
-                <source type="image/webp" media="(min-width: 1300px)" srcset="img/products/product-1-desktop@1x.webp 1x, img/products/product-1-desktop@2x.webp 2x">
-                <source type="image/webp" media="(min-width: 768px)" srcset="img/products/product-1-tablet@1x.webp 1x, img/products/product-1-tablet@2x.webp 2x">
-                <source type="image/webp" srcset="img/products/product-1-mobile@1x.webp 1x, img/products/product-1-mobile@2x.webp 2x">
-                <source media="(min-width: 1300px)" srcset="img/products/product-1-desktop@1x.jpg 1x, img/products/product-1-desktop@2x.jpg 2x">
-                <source media="(min-width: 768px)" srcset="img/products/product-1-tablet@1x.jpg 1x, img/products/product-1-tablet@2x.jpg 2x">
-                <img class="catalog__card-image" src="img/products/product-1-mobile@1x.jpg" srcset="img/products/product-1-mobile@2x.jpg 2x" alt="Фото продукта.">
-              </picture>
+              <a class="catalog__card-link" href="#">
+                <picture class="catalog__card-image-wrapper">
+                  <source type="image/webp" media="(min-width: 1150px)" srcset="img/products/product-1-desktop@1x.webp 1x, img/products/product-1-desktop@2x.webp 2x">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/products/product-1-tablet@1x.webp 1x, img/products/product-1-tablet@2x.webp 2x">
+                  <source type="image/webp" srcset="img/products/product-1-mobile@1x.webp 1x, img/products/product-1-mobile@2x.webp 2x">
+                  <source media="(min-width: 1150px)" srcset="img/products/product-1-desktop@1x.jpg 1x, img/products/product-1-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" srcset="img/products/product-1-tablet@1x.jpg 1x, img/products/product-1-tablet@2x.jpg 2x">
+                  <img class="catalog__card-image" src="img/products/product-1-mobile@1x.jpg" srcset="img/products/product-1-mobile@2x.jpg 2x" alt="Фото продукта.">
+                </picture>
 
-              <h3 class="catalog__card-title">Зайчик-попрыгайчик</h3>
-              <dl class="catalog__card-characteristics">
-                <div>
-                  <dt>Рост</dt>
-                  <dd>30&nbsp;см</dd>
-                </div>
-                <div>
-                  <dt>вес</dt>
-                  <dd>200&nbsp;г</dd>
-                </div>
-              </dl>
+                <div class="catalog__card-content-wrapper">
+                  <h3 class="catalog__card-title">Зайчик-попрыгайчик</h3>
+                  <p class="catalog__card-characteristics">Рост 30&nbsp;см, вес 200&nbsp;г</p>
 
-              <div class="catalog__card-price-wrapper">
-                <b class="catalog__card-price">1 200 руб.</b>
-                <button class="catalog__card-button" type="button">
-                    <span class="visually-hidden">Добавить в корзину</span>
-                    <svg aria-hidden="true" focusable="false" width="21" height="18">
-                        <use href="img/sprite.svg#basket"></use>
-                    </svg>
-                </button>
-            </div>
+                  <div class="catalog__card-price-wrapper">
+                    <b class="catalog__card-price">1 200 руб.</b>
+                    <button class="catalog__card-button" type="button" id="modal-size-button">
+                        <span class="visually-hidden">Добавить в корзину</span>
+                        <svg aria-hidden="true" focusable="false" width="21" height="18">
+                            <use href="img/sprite.svg#basket"></use>
+                        </svg>
+                    </button>
+                  </div>
+                </div>
+              </a>
             </li>
           </ul>
         </div>
@@ -136,7 +131,7 @@
 
     <footer class="footer">
       <div class="page__container footer__container">
-        <a class="footer__logo" href="#">
+        <a class="footer__logo" href="index.html">
           <svg class="footer__logo-img" width="102" height="34" role="img" aria-label="Mishka.">
             <use href="img/sprite.svg#footer-logo"></use>
           </svg>

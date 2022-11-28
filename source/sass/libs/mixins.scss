@@ -68,28 +68,28 @@
 
   @include mobile {
     font-size: 17px;
-    line-height: 20px;
+    line-height: 24px;
   }
 
   @include tablet {
     font-size: 20px;
-    line-height: 22px;
+    line-height: 24px;
   }
 }
 
-@mixin header-4 { //--
+@mixin header-4 {
   font: inherit;
   margin: 0;
   font-weight: 700;
 
   @include mobile {
     font-size: 17px;
-    line-height: 24px;
+    line-height: 20px;
   }
 
   @include tablet {
     font-size: 20px;
-    line-height: 24px;
+    line-height: 22px;
   }
 }
 

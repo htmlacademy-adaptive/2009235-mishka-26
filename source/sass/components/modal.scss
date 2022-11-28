@@ -21,7 +21,7 @@
   margin: auto;
   background-color: variables.$white;
   border: 1px solid variables.$special-grey4;
-  box-shadow: 0 5px 10px rgba(0, 1, 1, 0.25);
+  box-shadow: 0 5px 10px rgba(variables.$black, 0.25);
 
   @include mixins.mobile {
     width: 100%;
