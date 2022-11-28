@@ -3,6 +3,15 @@
 
 .introduction {
   position: relative;
+  background-color: variables.$basic-gray;
+
+  @include mixins.tablet {
+    padding-bottom: 24px;
+  }
+
+  @include mixins.desktop {
+    padding-bottom: 34px;
+  }
 
   &--index {
     background-color: variables.$special-grey3;
@@ -10,6 +19,7 @@
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center;
+    padding-bottom: 0;
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/introduction-background@2x.jpg");
@@ -19,10 +29,27 @@
       background-size: auto 373px;
       background-position: center -18px;
     }
+
+    & .introduction__title {
+      @include mixins.mobile {
+        margin-top: 73px;
+        margin-bottom: 120px;
+      }
+    
+      @include mixins.tablet {
+        margin-top: 90px;
+        margin-bottom: 372px;
+      }
+    
+      @include mixins.desktop {
+        margin-top: 95px;
+        margin-bottom: 355px;
+      }
+    }
   }
 
-  @include mixins.tablet {
-    &::after {
+  &::after {
+    @include mixins.tablet {
       content: "";
       position: absolute;
       bottom: 0;
@@ -32,14 +59,18 @@
       background-image: url("../img/zigzag-white.svg");
       background-repeat: repeat-x;
       background-position: bottom center;
+      background-size: auto 100%;
+    }
+
+    @include mixins.desktop {
+      height: 34px;
     }
   }
 }
 
 .introduction__container {
-  @include mixins.mobile {
-    padding-top: 5px;
-  }
+ display: flex;
+ flex-direction: column;
 }
 
 .introduction__header {
@@ -50,11 +81,6 @@
   @include mixins.tablet {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 90px;
-  }
-
-  @include mixins.desktop {
-    margin-bottom: 95px;
   }
 }
 
@@ -99,18 +125,18 @@
   @include mixins.header-1;
 
   @include mixins.mobile {
-    margin-top: 68px;
-    margin-bottom: 120px;
+    margin-top: 73px;
+    margin-bottom: 73px;
   }
 
   @include mixins.tablet {
-    margin-top: 90px;
-    margin-bottom: 372px;
+    margin-top: 40px;
+    margin-bottom: 65px;
   }
 
   @include mixins.desktop {
-    margin-top: 95px;
-    margin-bottom: 355px;
+    margin-top: 45px;
+    margin-bottom: 80px;
   }
 }
 
