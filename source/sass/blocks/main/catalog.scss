@@ -40,12 +40,18 @@
   text-decoration: none;
   color: variables.$black;
 
+  @include mixins.mobile {
+    grid-template-rows: 195px auto;
+  }
+
   @include mixins.tablet {
     grid-template-columns: 1fr 1fr;
   }
 
   @include mixins.desktop {
     grid-template-columns: auto;
+    grid-template-rows: 462px auto;
+    height: 100%;
   }
 
   &:hover {
@@ -65,21 +71,17 @@
   display: block;
   background-color: variables.$special-grey5;
 
-  @include mixins.mobile {
-    height: 195px;
-  }
-
   @include mixins.tablet {
     aspect-ratio: 1/1;
   }
 
   @include mixins.desktop {
-    height: 462px;
     aspect-ratio: auto;
   }
 }
 
 .catalog__card-image {
+  display: block;
   height: 100%;
   width: 100%;
   object-fit: contain;

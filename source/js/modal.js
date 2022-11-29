@@ -15,16 +15,17 @@
   }
 
   modal_open_buttons.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
       openModal(modal_window);
     })
   })
 
-  modal_window.addEventListener('click', function (e) {
+  modal_window.addEventListener('click', (e) => {
     if (!modal_window.classList.contains('modal--close') && e.target == e.currentTarget) {
       closeModal(modal_window);
     }
-  });
+  })
 
   function closeByEscape(e) {
     if (!modal_window.classList.contains('modal--close') && e.key === 'Escape') {
