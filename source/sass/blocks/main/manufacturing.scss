@@ -1,0 +1,84 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.manufacturing {
+  margin-top: 30px;
+  margin-bottom: 58px;
+
+  @include mixins.tablet {
+    margin-top: 53px;
+    margin-bottom: 64px;
+  }
+
+  @include mixins.desktop {
+    margin-top: 57px;
+    margin-bottom: 105px;
+  }
+}
+
+.manufacturing__container {
+  position: relative;
+}
+
+.manufacturing__video {
+  @include mixins.mobile {
+    position: absolute;
+    top: 95px;
+    width: calc(100% - variables.$padding-container-mobile * 2);
+    aspect-ratio: 26/15;
+    z-index: 2;
+  }
+}
+
+.manufacturing__wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid variables.$special-grey;
+
+  @include mixins.mobile {
+    padding: 20px 33px 32px;
+
+    &::before {
+      content: "";
+      aspect-ratio: 26 / 15;
+      display: block;
+      margin: 0 -33px;
+    }
+  }
+}
+
+.manufacturing__title {
+  @include mixins.header-3;
+  display: flex;
+  align-items: center;
+  order: -1;
+
+  &::before {
+    content: "";
+    width: 33px;
+    height: 22px;
+    background-image: url("../img/camera.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-shrink: 0;
+  }
+
+  @include mixins.mobile {
+    gap: 25px;
+    margin-bottom: 26px;
+    max-width: 150px;
+  }
+
+  @include mixins.tablet {
+    gap: 33px;
+    align-items: baseline;
+    margin-bottom: 25px;
+  }
+
+  @include mixins.desktop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 27px;
+    margin-bottom: 27px;
+  }
+}

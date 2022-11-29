@@ -8,6 +8,7 @@
 @use "./components/input.scss";
 @use "./components/modal.scss";
 @use "./components/size-list.scss";
+@use "./components/video.scss";
 /*blocks*/
 /*PAGE*/
 @use "./blocks/page.scss";
@@ -30,7 +31,7 @@
 @use "./blocks/main/form.scss";
 /*ctalog*/
 @use "./blocks/main/catalog.scss";
-@use "./blocks/main/accompaniment.scss";
+@use "./blocks/main/manufacturing.scss";
 /*location*/
 @use "./blocks/main/contacts.scss";
 @use "./blocks/main/location.scss";
