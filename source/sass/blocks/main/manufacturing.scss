@@ -20,7 +20,18 @@
   position: relative;
 }
 
-.aaa {
+.manufacturing__item {
+  @include mixins.mobile {
+    box-shadow: inset 0 0 0 1px variables.$special-grey;
+  }
+
+  @include mixins.desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    grid-row: 455px;
+  }
+
   &:hover {
     & .manufacturing__info-wrapper {
       box-shadow: 0 6px 10px rgba(variables.$black, 0.1);
@@ -36,35 +47,31 @@
 
 .manufacturing__video {
   @include mixins.mobile {
-    position: absolute;
-    top: 95px;
-    width: calc(100% - variables.$padding-container-mobile * 2);
     aspect-ratio: 26/15;
+  }
+
+  @include mixins.desktop {
+    grid-column: span 2;
   }
 }
 
 .manufacturing__info-wrapper {
   display: flex;
   flex-direction: column;
-  border: 1px solid variables.$special-grey;
+  transition: variables.$transition-all;
 
   @include mixins.mobile {
-    padding: 20px 33px 32px;
-
-    &::before {
-      content: "";
-      aspect-ratio: 26 / 15;
-      display: block;
-      margin: 0 -33px;
-    }
+    padding: 35px 34px 33px;
   }
 
   @include mixins.tablet {
     padding: 40px 41px 45px;
+    border: 1px solid variables.$special-grey;
   }
 
   @include mixins.desktop {
     padding: 40px 57px 60px 80px;
+    margin-left: -50px;
   }
 }
 
@@ -103,9 +110,24 @@
     gap: 27px;
     margin-bottom: 27px;
   }
+
+  &--tablet {
+    @include mixins.mobile {
+      display: none;
+    }
+  }
+
+  &--mobile {
+    padding: 21px 34px 0;
+
+    @include mixins.tablet {
+      display: none;
+    }
+  }
 }
 
 .manufacturing__paragraph {
+  margin: 0;
   color: variables.$special-grey-dark;
 
   @include mixins.mobile {
