@@ -47,7 +47,7 @@ button.button {
   }
 
   &:disabled {
-    background-color: variables.$special_grey-medium;
+    opacity: 0.3;
     cursor: default;
     pointer-events: none;
     user-select: none;
@@ -76,7 +76,7 @@ button.button {
 }
 
 a.button:not([href]) {
-  background-color: variables.$special_grey-medium;
+  opacity: 0.3;
   cursor: default;
   pointer-events: none;
   user-select: none;

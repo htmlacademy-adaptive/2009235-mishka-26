@@ -1,6 +1,6 @@
 (() => {
   const heder_menu = document.querySelectorAll('.main-nav__list.site-list a');
-  const introduction_menu = document.querySelectorAll('.introduction__site-list a');
+  const introduction_menu = document.querySelectorAll('.hero__site-list a');
 
   if (!heder_menu||!introduction_menu) return;
 

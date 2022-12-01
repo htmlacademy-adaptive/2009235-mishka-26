@@ -5,12 +5,10 @@
   display: flex;
   align-items: center;
   font: inherit;
-  text-transform: uppercase;
-  font-size: 16px;
-  line-height: 20px;
   color: variables.$special-grey-dark;
-  background: variables.$white;
-  border: 1px solid variables.$special-grey3;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid variables.$black;
   border-radius: 0;
   margin: 0;
   width: 100%;
@@ -20,81 +18,65 @@
   transition: variables.$transition-all;
 
   @include mixins.mobile {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 18px;
-    min-height: 45px;
-    padding: 9.5px 0;
-    padding-left: 14px;
-    padding-right: 40px;
+    min-height: 52px;
+    padding: 17px 30px 15px 0;
   }
 
   @include mixins.tablet {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 19px;
+    line-height: 18px;
     min-height: 52px;
-    padding: 10px 0;
-    padding-left: 18px;
-    padding-right: 50px;
+    padding: 16px 18px;
+    padding-right: 60px;
   }
 
   &::placeholder {
-    color: rgba(variables.$special-grey-dark, 0.6);
+    color: rgba(variables.$black, 0.3);
   }
 
   & + svg {
-    color: variables.$black;
+    color: rgba(variables.$black, 0.2);
   }
 
   &:hover {
-    border-color: variables.$special-grey-light;
+    border-color: variables.$basic-green2;
+
+    & + svg {
+      color: variables.$basic-green2;
+    }
   }
 
   &:focus {
-    border: 2px solid variables.$special-grey-dark;
-
-    @include mixins.mobile {
-      padding: 8.5px 0;
-      padding-left: 13px;
-      padding-right: 39px;
-    }
-
-    @include mixins.tablet {
-      padding: 9px 0;
-      padding-left: 17px;
-      padding-right: 49px;
-    }
+    border-color: variables.$basic-green2;
 
     & + svg {
-      color: variables.$basic-green;
+      color: variables.$basic-green2;
     }
   }
 
   &:focus:invalid,
   &--invalid,
   &--invalid:hover {
-    border: 2px solid variables.$special-error;
-
-    @include mixins.mobile {
-      padding: 8.5px 0;
-      padding-left: 13px;
-      padding-right: 39px;
-    }
-
-    @include mixins.tablet {
-      padding: 9px 0;
-      padding-left: 17px;
-      padding-right: 49px;
-    }
+    border-color: variables.$special-error;
 
     & + svg {
       color: variables.$special-error;
     }
   }
 
-  &:disabled,
-  &:read-only {
-    opacity: 0.6;
+  &:disabled {
+    opacity: 0.3;
     cursor: default;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &:read-only {
+    cursor: default;
+    pointer-events: none;
+    user-select: none;
   }
 
   &--num::-webkit-inner-spin-button,
@@ -104,24 +86,10 @@
 
   &--textarea {
     resize: none;
-
-    @include mixins.mobile {
-      min-height: 152px;
-      padding: 9px 14px;
-    }
-
-    @include mixins.tablet {
-      min-height: 174px;
-      padding: 9px 18px;
-    }
-  }
-
-  &--textarea:focus {
-    padding: 8px 13px;
-
-    @include mixins.tablet {
-      padding: 8px 17px;
-    }
+    border: 2px solid variables.$special-grey-dark;
+    min-height: 142px;
+    padding: 15px;
+    color: variables.$black;
   }
 
   &::-webkit-contacts-auto-fill-button {

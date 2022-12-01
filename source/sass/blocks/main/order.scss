@@ -1,0 +1,44 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.order {
+  overflow-x: hidden;
+}
+
+.order__container {
+  @include mixins.mobile {
+    padding-top: 17px;
+    padding-bottom: 50px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 55px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 100px;
+  }
+}
+
+.order__paragraph {
+  margin: 0;
+  color: variables.$special-grey-dark;
+
+  @include mixins.mobile {
+    font-size: 13px;
+    line-height: 24px;
+    margin-bottom: 29px;
+  }
+
+  @include mixins.tablet {
+    font-size: 17px;
+    line-height: 30px;
+    margin-bottom: 13px;
+  }
+
+  @include mixins.desktop {
+    margin: 0 auto;
+    margin-bottom: 12px;
+    max-width: 700px;
+  }
+}

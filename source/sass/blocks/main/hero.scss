@@ -1,7 +1,7 @@
 @use "../../libs/variables.scss";
 @use "../../libs/mixins.scss";
 
-.introduction {
+.hero {
   position: relative;
   background-color: variables.$basic-gray;
 
@@ -33,16 +33,16 @@
   }
 }
 
-.introduction--index {
+.hero--index {
   background-color: variables.$special-grey3;
-  background-image: url("../img/introduction-background@1x.jpg");
+  background-image: url("../img/hero-background@1x.jpg");
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
   padding-bottom: 0;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/introduction-background@2x.jpg");
+    background-image: url("../img/hero-background@2x.jpg");
   }
 
   @include mixins.mobile {
@@ -50,7 +50,7 @@
     background-position: center -18px;
   }
 
-  & .introduction__title {
+  & .hero__title {
     @include mixins.mobile {
       margin-top: 73px;
       margin-bottom: 120px;
@@ -72,12 +72,12 @@
   }
 }
 
-.introduction__container {
+.hero__container {
   display: flex;
   flex-direction: column;
 }
 
-.introduction__header {
+.hero__header {
   @include mixins.mobile {
     display: none;
   }
@@ -88,7 +88,7 @@
   }
 }
 
-.introduction__site-list {
+.hero__site-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -97,7 +97,7 @@
   margin-left: -20px;
 }
 
-.introduction__site-item a {
+.hero__site-item a {
   display: block;
   padding: 20px;
   font-weight: 700;
@@ -115,7 +115,7 @@
   }
 }
 
-.introduction__paragraph {
+.hero__paragraph {
   font-size: 15px;
   line-height: 24px;
   color: variables.$special-grey-dark;
@@ -125,7 +125,7 @@
   margin-top: 20px;
 }
 
-.introduction__title {
+.hero__title {
   @include mixins.header-1;
 
   @include mixins.mobile {
@@ -144,7 +144,7 @@
   }
 }
 
-.introduction__list {
+.hero__list {
   @include mixins.mobile {
     margin: 0;
     margin-left: -(variables.$padding-container-mobile);
