@@ -15,17 +15,13 @@
     window.addEventListener('resize', start);
     function start() {
       if (document.documentElement.clientWidth < desktop_width && document.documentElement.clientWidth >= tablet_width) {
-        for (let i = 0; i <= heder_menu.length - 1; i++) {
-          introduction_menu[i].innerHTML = heder_menu[i].innerHTML;
-          introduction_menu[i].href = heder_menu[i].href;
-        }
+        introduction_menu[i].innerHTML = heder_menu[i].innerHTML;
+        introduction_menu[i].href = heder_menu[i].href;
       }
 
       else {
-        for (let i = 0; i <= heder_menu.length - 1; i++) {
-          introduction_menu[i].innerHTML = origin_innerHTML;
-          introduction_menu[i].href = origin_href;
-        }
+        introduction_menu[i].innerHTML = origin_innerHTML;
+        introduction_menu[i].href = origin_href;
       }
     }
   }
