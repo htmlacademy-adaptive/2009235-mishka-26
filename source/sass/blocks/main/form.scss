@@ -111,6 +111,14 @@
     @include mixins.mobile {
       margin-bottom: 4px;
     }
+
+    @include mixins.tablet {
+      margin-top: 0;
+    }
+
+    @include mixins.desktop {
+      margin-top: 0;
+    }
   }
 }
 
