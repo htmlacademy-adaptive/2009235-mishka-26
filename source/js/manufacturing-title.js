@@ -1,12 +1,10 @@
 (() => {
   const manufacturing_title = document.querySelectorAll('.manufacturing__title');
+  const parent_mobile = document.querySelectorAll('.manufacturing__item');
+  const parent_tablet = document.querySelectorAll('.manufacturing__info-wrapper');
 
-  if (!manufacturing_title.length) return;
+  if (!manufacturing_title.length || !parent_mobile.length) return;
   var tablet_width = 768;
-
-  /*const parent_tablet = manufacturing_title.parentElement;
-  const parent_mobile = manufacturing_title.parentElement;
-  console.log(parent_mobile);*/
 
   for (let i = 0; i <= manufacturing_title.length - 1; i++) {
     const origin_title = manufacturing_title[i].innerHTML;
@@ -16,29 +14,19 @@
     const new_title = document.createElement(origin_teg);
     new_title.classList.add(origin_class);
     new_title.innerHTML = origin_title;
-    console.log(new_title);
-
-
 
     start();
     window.addEventListener('resize', start);
     function start() {
-      let parent_tablet = manufacturing_title.parentElement;
-      let parent_mobile = manufacturing_title.parentElement;
-
       manufacturing_title.forEach((title) => {
         if (document.documentElement.clientWidth < tablet_width) {
-          //let parent = title.parentElement.parentElement;
-          //parent.insertBefore(new_title, parent.FirstChild);
-          parent_mobile.appendChild(new_title);
-          parent_tablet.remove();
+          title.remove();
+          parent_mobile[i].appendChild(new_title);
         }
 
         else {
-          //let parent = title.parentElement;
-          parent_tablet.appendChild(new_title);
-          parent_mobile.remove();
-          //title.remove();
+          title.remove();
+          parent_tablet[i].appendChild(new_title);
         }
       })
     }
