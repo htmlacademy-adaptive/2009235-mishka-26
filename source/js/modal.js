@@ -15,8 +15,7 @@
   }
 
   modal_open_buttons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      e.stopPropagation();
+    button.addEventListener('click', () => {
       openModal(modal_window);
     })
   })

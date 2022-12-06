@@ -23,6 +23,8 @@
 .manufacturing__item {
   @include mixins.mobile {
     box-shadow: inset 0 0 0 1px variables.$special-grey;
+    display: flex;
+    flex-direction: column;
   }
 
   @include mixins.desktop {
@@ -96,6 +98,7 @@
     margin-bottom: 26px;
     max-width: 150px;
     min-height: 48px;
+    padding: 21px 34px 0;
   }
 
   @include mixins.tablet {
@@ -111,7 +114,7 @@
     margin-bottom: 27px;
   }
 
-  &--tablet {
+  /*&--tablet {
     @include mixins.mobile {
       display: none;
     }
@@ -123,7 +126,7 @@
     @include mixins.tablet {
       display: none;
     }
-  }
+  }*/
 }
 
 .manufacturing__paragraph {

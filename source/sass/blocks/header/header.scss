@@ -3,7 +3,9 @@
 
 .header {
   background-color: variables.$white;
+}
 
+.header__wrapper {
   @include mixins.tablet {
     box-shadow: inset 0 -1px 0 0 variables.$special-grey2;
   }

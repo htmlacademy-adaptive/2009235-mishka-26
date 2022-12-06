@@ -22,56 +22,55 @@
 
   <body class="page__body">
     <header class="header">
-      <div class="page__container header__container">
-        <a class="header__logo" href="index.html">
-          <picture>
-            <source media="(min-width: 1150px)" srcset="img/logotype-desktop.svg">
-            <source media="(min-width: 768px)" srcset="img/logotype-tablet.svg">
-            <img class="header__logo-image" src="img/logotype-mobile.svg" width="86" height="35" alt="Магазин «Мишка».">
-          </picture>
-        </a>
+      <div class="header__wrapper">
+        <div class="page__container header__container">
+          <a class="header__logo" href="index.html">
+            <picture>
+              <source media="(min-width: 1150px)" srcset="img/logotype-desktop.svg">
+              <source media="(min-width: 768px)" srcset="img/logotype-tablet.svg">
+              <img class="header__logo-image" src="img/logotype-mobile.svg" width="86" height="35" alt="Магазин «Мишка».">
+            </picture>
+          </a>
 
-        <nav class="main-nav main-nav--no-js">
-          <button class="main-nav__toggle main-nav__toggle--closed" type="button">
-            <span class="visually-hidden">Открыть или закрыть навигационное меню</span>
-          </button>
+          <nav class="main-nav main-nav--no-js">
+            <button class="main-nav__toggle main-nav__toggle--closed" type="button">
+              <span class="visually-hidden">Открыть или закрыть навигационное меню</span>
+            </button>
 
-          <div class="main-nav__wrapper">
-            <ul class="main-nav__list site-list">
-              <li class="site-list__item">
-                <a href="calalog.html">Каталог товаров</a>
-              </li>
-              <li class="site-list__item">
-                <a href="form.html">Вязание на заказ</a>
-              </li>
-            </ul>
+            <div class="main-nav__wrapper">
+              <ul class="main-nav__list site-list">
+                <li class="site-list__item">
+                  <a href="calalog.html">Каталог товаров</a>
+                </li>
+                <li class="site-list__item">
+                  <a href="form.html">Вязание на заказ</a>
+                </li>
+              </ul>
 
-            <ul class="main-nav__list user-list">
-              <li class="user-list__item">
-                <a class="user-list__login" href="#">
-                  <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="m17.693 16.057-3.477-3.477c1.023-1.33 1.534-2.966 1.534-4.705C15.75 3.477 12.273 0 7.875 0S0 3.477 0 7.875s3.477 7.875 7.875 7.875c1.739 0 3.375-.614 4.704-1.534l3.478 3.477c.204.205.409.307.818.307.614 0 1.125-.511 1.125-1.125 0-.204-.102-.511-.307-.818ZM2.25 7.875c0-3.068 2.557-5.625 5.625-5.625S13.5 4.807 13.5 7.875 10.943 13.5 7.875 13.5 2.25 10.943 2.25 7.875Z"/>
-                  </svg>
-                  <span>Поиск по сайту</span>
-                </a>
-              </li>
-              <li class="user-list__item">
-                <a class="user-list__basket" href="#">
-                  <svg aria-hidden="true" focusable="false" width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.188 6.857h-3.55L13.188.381C12.985 0 12.58-.095 12.174.095s-.507.572-.304.953l3.145 5.81H5.783l3.145-5.81c.202-.381 0-.762-.305-.953-.406-.19-.811 0-1.014.286l-3.45 6.476H.812c-.406 0-.812.286-.812.762 0 .381.304.762.812.762h.202l.914 2.857c-.203.095-.305.286-.305.572 0 .38.305.666.71.666L4.058 18h12.884l1.725-5.524c.405 0 .71-.286.71-.667 0-.19-.102-.476-.304-.57l.912-2.858h.203c.406 0 .812-.286.812-.762 0-.476-.406-.762-.812-.762Zm-4.565 9.62H5.073L3.854 12.38h13.087l-1.319 4.095Zm1.623-5.525H3.348l-.812-2.666h15.522l-.812 2.666Z"/>
-                  </svg>
-                  <span>Корзина: пока пуста</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+              <ul class="main-nav__list user-list">
+                <li class="user-list__item">
+                  <a class="user-list__login" href="#">
+                    <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m17.693 16.057-3.477-3.477c1.023-1.33 1.534-2.966 1.534-4.705C15.75 3.477 12.273 0 7.875 0S0 3.477 0 7.875s3.477 7.875 7.875 7.875c1.739 0 3.375-.614 4.704-1.534l3.478 3.477c.204.205.409.307.818.307.614 0 1.125-.511 1.125-1.125 0-.204-.102-.511-.307-.818ZM2.25 7.875c0-3.068 2.557-5.625 5.625-5.625S13.5 4.807 13.5 7.875 10.943 13.5 7.875 13.5 2.25 10.943 2.25 7.875Z"/>
+                    </svg>
+                    <span>Поиск по сайту</span>
+                  </a>
+                </li>
+                <li class="user-list__item">
+                  <a class="user-list__basket" href="#">
+                    <svg aria-hidden="true" focusable="false" width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.188 6.857h-3.55L13.188.381C12.985 0 12.58-.095 12.174.095s-.507.572-.304.953l3.145 5.81H5.783l3.145-5.81c.202-.381 0-.762-.305-.953-.406-.19-.811 0-1.014.286l-3.45 6.476H.812c-.406 0-.812.286-.812.762 0 .381.304.762.812.762h.202l.914 2.857c-.203.095-.305.286-.305.572 0 .38.305.666.71.666L4.058 18h12.884l1.725-5.524c.405 0 .71-.286.71-.667 0-.19-.102-.476-.304-.57l.912-2.858h.203c.406 0 .812-.286.812-.762 0-.476-.406-.762-.812-.762Zm-4.565 9.62H5.073L3.854 12.38h13.087l-1.319 4.095Zm1.623-5.525H3.348l-.812-2.666h15.522l-.812 2.666Z"/>
+                    </svg>
+                    <span>Корзина: пока пуста</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
-    </header>
 
-
-    <main class="main">
-      <header class="main__header hero">
+      <div class="header__hero hero">
         <div class="page__container hero__container">
           <nav class="hero__header">
             <ul class="hero__site-list">
@@ -88,8 +87,11 @@
 
           <h1 class="hero__title">Вязание на заказ</h1>
         </div>
-      </header>
+      </div>
+    </header>
 
+
+    <main class="main">
       <section class="order">
         <div class="page__container order__container">
           <h2 class="visually-hidden">Форма заказа</h2>
@@ -211,10 +213,8 @@
             </fieldset>
 
             <fieldset class="form__group">
-                <span class="form__legend">Доп</span>
-              <label>
-                <textarea class="input input--textarea form__textarea" rows="3" id="user-message" name="message" placeholder="Опишите все ваши пожелания к заказу" autocomplete="off"></textarea>
-              </label>
+              <label class="form__legend" for="user-message">Доп</label>
+              <textarea class="input input--textarea form__textarea" rows="3" id="user-message" name="message" placeholder="Опишите все ваши пожелания к заказу" autocomplete="off"></textarea>
             </fieldset>
 
             <div class="form__group form__group--submit">
