@@ -74,14 +74,6 @@
 .catalog__card-image-wrapper {
   display: block;
   background-color: variables.$special-grey5;
-
-  @include mixins.tablet {
-    aspect-ratio: 1/1;
-  }
-
-  @include mixins.desktop {
-    aspect-ratio: auto;
-  }
 }
 
 .catalog__card-image {
@@ -132,6 +124,7 @@
   font-size: 15px;
   line-height: 24px;
   padding-top: 22px;
+  padding-right: 20px;
 
   @include mixins.tablet {
     font-size: 17px;

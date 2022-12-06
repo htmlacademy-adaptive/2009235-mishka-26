@@ -43,11 +43,13 @@
     grid-column: 1 / -1;
     grid-row: 1 / 2;
     margin-bottom: 37px;
+    padding-right: 100px;
   }
 
   @include mixins.desktop {
     margin-top: 60px;
     margin-bottom: 35px;
+    padding-right: 0;
   }
 
   &::before {

@@ -33,6 +33,7 @@
   @include mixins.tablet {
     position: relative;
     margin-bottom: 50px;
+    padding-right: 60px;
 
     &::after {
       content: "";
@@ -52,6 +53,7 @@
   @include mixins.desktop {
     margin-top: 78px;
     margin-bottom: 35px;
+    padding-right: 0;
 
     &::after {
       right: calc(100% + 65px);

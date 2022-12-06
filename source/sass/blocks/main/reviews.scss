@@ -52,6 +52,7 @@
 
   @include mixins.tablet {
     margin-bottom: 38px;
+    padding-right: 200px;
   }
 
   @include mixins.desktop {
@@ -84,6 +85,10 @@
 .reviews__author-info {
   display: flex;
   flex-direction: column;
+
+  @include mixins.tablet {
+    padding-right: 180px;
+  }
 }
 
 .reviews__author-name {

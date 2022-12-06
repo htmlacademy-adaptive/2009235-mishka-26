@@ -34,6 +34,10 @@
     line-height: 30px;
     grid-template-columns: 75px auto;
   }
+
+  & span {
+    overflow-wrap: break-word;
+  }
 }
 
 .contacts__contact {

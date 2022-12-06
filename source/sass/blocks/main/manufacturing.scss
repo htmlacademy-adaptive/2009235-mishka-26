@@ -96,7 +96,6 @@
   @include mixins.mobile {
     gap: 25px;
     margin-bottom: 26px;
-    max-width: 150px;
     min-height: 48px;
     padding: 21px 34px 0;
   }
@@ -113,20 +112,6 @@
     gap: 27px;
     margin-bottom: 27px;
   }
-
-  /*&--tablet {
-    @include mixins.mobile {
-      display: none;
-    }
-  }
-
-  &--mobile {
-    padding: 21px 34px 0;
-
-    @include mixins.tablet {
-      display: none;
-    }
-  }*/
 }
 
 .manufacturing__paragraph {

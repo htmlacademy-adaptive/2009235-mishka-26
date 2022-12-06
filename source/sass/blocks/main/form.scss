@@ -47,10 +47,10 @@
 
 .form__group--submit {
   display: flex;
+  gap: 30px;
 
   @include mixins.mobile {
     flex-direction: column;
-    gap: 30px;
     margin-top: -16px;
   }
 
@@ -100,6 +100,7 @@
     margin-top: 15px;
     grid-row-start: 1;
     grid-row-end: -1;
+    padding-right: 15px;
   }
 
   @include mixins.desktop {
@@ -145,6 +146,7 @@
   @include mixins.tablet {
     display: grid;
     grid-template-columns: 1fr 3fr;
+    align-items: center;
   }
 
   @include mixins.desktop {
@@ -173,7 +175,6 @@
 
 .form__label {
   font-weight: 700;
-  max-width: 150px;
 
   @include mixins.mobile {
     font-size: 17px;
@@ -183,6 +184,7 @@
   @include mixins.tablet {
     font-size: 19px;
     line-height: 18px;
+    max-width: 150px;
   }
 }
 
