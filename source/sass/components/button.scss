@@ -30,6 +30,10 @@ button.button {
   text-decoration: none;
   transition: variables.$transition-all;
 
+  @include mixins.mobile {
+    letter-spacing: 0.5px;
+  }
+
   // Size
   padding: 14px;
   // Text
