@@ -3,7 +3,7 @@
 
 .location__container {
   @include mixins.mobile {
-    padding-top: 38px;
+    padding-top: 40px;
     padding-bottom: 39px;
     display: flex;
     flex-direction: column;

@@ -26,7 +26,7 @@
 
   @include mixins.mobile {
     padding-top: 30px;
-    padding-bottom: 48px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
   }
@@ -67,10 +67,12 @@
 
   @include mixins.mobile {
     margin-bottom: 33px;
+    line-height: 30px;
   }
 
   @include mixins.tablet {
     margin-bottom: 61px;
+    line-height: 30px;
   }
 
   @include mixins.desktop {

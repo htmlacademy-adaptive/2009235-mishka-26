@@ -64,7 +64,7 @@
   flex-direction: column;
 
   @include mixins.mobile {
-    gap: 21px;
+    gap: 20px;
   }
 
   @include mixins.tablet {
@@ -88,16 +88,19 @@
 
   &--price::before {
     background-image: url("../img/about-price.svg");
+    background-position: top 30% right 85%;
   }
 
   &--like::before {
     background-image: url("../img/about-like.svg");
-    background-position: center left 6px;
+    background-position: top 75% left 30%;
   }
 
   &--work::before {
     background-image: url("../img/about-work.svg");
     background-position: center left 3px;
+    margin-top: 5px;
+    margin-bottom: -5px;
   }
 
   &--support::before {
@@ -108,6 +111,8 @@
   &--present::before {
     background-image: url("../img/about-present.svg");
     background-position: center left 3px;
+    margin-top: 5px;
+    margin-bottom: -3px;
   }
 }
 
