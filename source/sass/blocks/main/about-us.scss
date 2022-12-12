@@ -49,7 +49,7 @@
     grid-template-columns: auto 50%;
     grid-template-rows: repeat(3, 1fr);
     grid-auto-flow: column;
-    row-gap: 55px;
+    row-gap: 52px;
     column-gap: 50px;
   }
 
@@ -101,11 +101,19 @@
     background-position: center left 3px;
     margin-top: 5px;
     margin-bottom: -5px;
+
+    @include mixins.tablet {
+      background-position: top left 3px;
+    }
   }
 
   &--support::before {
     background-image: url("../img/about-support.svg");
     margin-left: -6px;
+
+    @include mixins.tablet {
+      background-position: top 3px center;
+    }
   }
 
   &--present::before {
@@ -113,6 +121,10 @@
     background-position: center left 3px;
     margin-top: 5px;
     margin-bottom: -3px;
+
+    @include mixins.tablet {
+      background-position: top left 3px;
+    }
   }
 }
 

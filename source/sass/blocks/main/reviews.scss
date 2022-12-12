@@ -33,7 +33,7 @@
 
   @include mixins.tablet {
     padding-top: 82px;
-    padding-bottom: 129px;
+    padding-bottom: 132px;
   }
 
   @include mixins.desktop {
@@ -98,6 +98,10 @@
   font-size: 17px;
   line-height: 24px;
   font-style: normal;
+
+  @include mixins.tablet {
+    font-size: 18px;
+  }
 }
 
 .reviews__author-mail {
@@ -112,7 +116,7 @@
   @include mixins.tablet {
     position: absolute;
     width: 175px;
-    top: 80px;
+    top: 76px;
     right: variables.$padding-container-tablet;
   }
 

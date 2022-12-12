@@ -44,9 +44,9 @@
       background-image: url("../img/flag.svg");
       background-size: contain;
       background-repeat: no-repeat;
-      top: 50%;
+      top: 35%;
       transform: translateY(-50%);
-      right: 0;
+      right: 3px;
     }
   }
 
@@ -67,7 +67,7 @@
   }
 
   @include mixins.tablet {
-    margin-bottom: 50px;
+    margin-bottom: 47px;
   }
 
   @include mixins.desktop {

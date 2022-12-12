@@ -134,11 +134,16 @@
     @include mobile {
       width: calc(100% + (variables.$padding-container-mobile));
       left: -(variables.$padding-container-mobile);
+      background-size: 320px auto;
+      background-repeat: repeat-x;
     }
 
     @include tablet {
       width: calc(100% + (variables.$padding-container-tablet));
       left: -(variables.$padding-container-tablet);
+      background-size: 768px auto;
+      background-repeat: repeat-x;
+      background-position: bottom left 10px;
     }
 
     @include desktop {

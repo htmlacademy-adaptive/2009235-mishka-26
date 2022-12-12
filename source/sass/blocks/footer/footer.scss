@@ -15,8 +15,8 @@
   }
 
   @include mixins.tablet {
-    padding-top: 57px;
-    padding-bottom: 57px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
@@ -49,9 +49,9 @@
   }
 
   @include mixins.tablet {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 11px;
+    margin-right: 77px;
   }
 
   @include mixins.desktop {

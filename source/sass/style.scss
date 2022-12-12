@@ -18,11 +18,11 @@
 @use "./blocks/header/main-nav.scss";
 @use "./blocks/header/site-list.scss";
 @use "./blocks/header/user-list.scss";
+@use "./blocks/header/hero.scss";
+@use "./blocks/header/products-type-list.scss";
 /*MAIN*/
 @use "./blocks/main/main.scss";
 /*index*/
-@use "./blocks/main/hero.scss";
-@use "./blocks/main/products-type-list.scss";
 @use "./blocks/main/week-product.scss";
 @use "./blocks/main/about-us.scss";
 @use "./blocks/main/reviews.scss";

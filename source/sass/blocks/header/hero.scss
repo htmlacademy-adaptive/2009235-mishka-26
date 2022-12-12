@@ -58,7 +58,7 @@
 
     @include mixins.tablet {
       margin-top: 90px;
-      margin-bottom: 372px;
+      margin-bottom: 370px;
     }
 
     @include mixins.desktop {
@@ -99,7 +99,7 @@
 
 .hero__site-item a {
   display: block;
-  padding: 20px;
+  padding: 21px 19px;
   font-weight: 700;
   font-size: 15px;
   line-height: 24px;
