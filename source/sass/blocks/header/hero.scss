@@ -28,7 +28,7 @@
     }
 
     @include mixins.desktop {
-      height: 39.5px;
+      height: 36px;
     }
   }
 }
@@ -69,6 +69,10 @@
 
   &::after {
     transform: translateY(50%);
+
+    @include mixins.desktop {
+      height: 39.5px;
+    }
   }
 }
 
@@ -139,12 +143,12 @@
   }
 
   @include mixins.tablet {
-    margin-top: 40px;
-    margin-bottom: 65px;
+    margin-top: 36px;
+    margin-bottom: 62px;
   }
 
   @include mixins.desktop {
-    margin-top: 45px;
+    margin-top: 36px;
     margin-bottom: 80px;
   }
 }

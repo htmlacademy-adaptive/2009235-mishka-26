@@ -6,12 +6,11 @@
   margin-bottom: 58px;
 
   @include mixins.tablet {
-    margin-top: 53px;
+    margin-top: 0;
     margin-bottom: 64px;
   }
 
   @include mixins.desktop {
-    margin-top: 57px;
     margin-bottom: 105px;
   }
 }
@@ -49,7 +48,13 @@
 
 .manufacturing__video {
   @include mixins.mobile {
+    height: 150px;
+    width: 100%;
     aspect-ratio: 26/15;
+  }
+
+  @include mixins.tablet {
+    height: 455px;
   }
 
   @include mixins.desktop {
@@ -72,7 +77,7 @@
   }
 
   @include mixins.desktop {
-    padding: 40px 57px 60px 80px;
+    padding: 45px 56px 60px 78px;
     margin-left: -50px;
   }
 }
@@ -95,7 +100,7 @@
 
   @include mixins.mobile {
     gap: 25px;
-    margin-bottom: 26px;
+    margin-bottom: 28px;
     min-height: 48px;
     padding: 21px 34px 0;
   }
@@ -103,7 +108,7 @@
   @include mixins.tablet {
     gap: 33px;
     align-items: baseline;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
   }
 
   @include mixins.desktop {
@@ -121,7 +126,8 @@
   @include mixins.mobile {
     font-size: 13px;
     line-height: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 41px;
+    margin-right: -1px;
   }
 
   @include mixins.tablet {

@@ -107,9 +107,16 @@
     margin-left: 45px;
   }
 
+  &--color {
+    @include mixins.mobile {
+      margin-bottom: 25px;
+    }
+  }
+
   &--lable {
     @include mixins.mobile {
       margin-bottom: 4px;
+      margin-top: 2px;
     }
 
     @include mixins.tablet {
@@ -118,6 +125,12 @@
 
     @include mixins.desktop {
       margin-top: 0;
+    }
+  }
+
+  &--textarea {
+    @include mixins.mobile {
+      margin-bottom: 24px;
     }
   }
 }
@@ -144,7 +157,7 @@
   position: relative;
 
   &:not(:last-of-type) {
-    margin-bottom: 30px;
+    margin-bottom: 33px;
 
     @include mixins.tablet {
       margin-bottom: 24px;
@@ -203,7 +216,11 @@
   display: grid;
 
   @include mixins.mobile {
-    gap: 23px;
+    gap: 13px;
+
+    &--color {
+      gap: 23px;
+    }
   }
 
   @include mixins.tablet {
@@ -235,14 +252,12 @@
   @include mixins.mobile {
     font-size: 14px;
     line-height: 16px;
-    text-align: center;
     order: -1;
   }
 
   @include mixins.tablet {
     font-size: 17px;
     line-height: 30px;
-    text-align: left;
   }
 }
 

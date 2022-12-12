@@ -7,8 +7,11 @@
   display: block;
 
   @include mixins.mobile {
-    padding: 10px 0;
-    padding-left: 61px; /*38+23*/
+    //padding: 10px 0;
+    //padding-left: 61px; /*38+23*/
+    display: flex;
+    gap: 22px;
+    align-items: center;
   }
 
   @include mixins.tablet {
@@ -25,6 +28,7 @@
   @include mixins.mobile {
     font-size: 17px;
     line-height: 18px;
+    padding-top: 4px;
   }
 
   @include mixins.tablet {
@@ -37,17 +41,26 @@
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
   aspect-ratio: 1 / 1;
   width: 38px;
   border: 2px solid variables.$special-grey-dark;
 
   &--radio {
     border-radius: 50%;
+
+    @include mixins.mobile {
+      width: 40px;
+    }
+  }
+
+  @include mixins.mobile {
+    position: relative;
+    flex-shrink: 0;
   }
 
   @include mixins.tablet {
     width: 52px;
+    transform: translateY(-50%);
   }
 
   &--checkbox::before {
