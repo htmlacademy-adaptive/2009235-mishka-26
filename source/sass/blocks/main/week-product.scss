@@ -24,7 +24,7 @@
     grid-template-columns: auto 60%;
     padding-left: 175px;
     column-gap: 58px;
-    padding-top: 55px;
+    padding-top: 70px;
     padding-bottom: 95px;
   }
 }
@@ -76,6 +76,7 @@
 
     @include mixins.desktop {
       right: calc(100% + 45px);
+      top: 10px;
     }
   }
 }
@@ -92,7 +93,7 @@
   }
 
   @include mixins.desktop {
-    margin-bottom: 55px;
+    margin-bottom: 52px;
   }
 }
 

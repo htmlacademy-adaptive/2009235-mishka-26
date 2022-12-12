@@ -37,7 +37,7 @@
   }
 
   @include mixins.desktop {
-    padding-top: 84px;
+    padding-top: 83px;
     padding-bottom: 190px;
     padding-left: 175px;
   }
@@ -102,6 +102,11 @@
   @include mixins.tablet {
     font-size: 18px;
   }
+
+  @include mixins.desktop {
+    font-size: 17px;
+    margin-bottom: 3px;
+  }
 }
 
 .reviews__author-mail {
@@ -121,7 +126,26 @@
   }
 
   @include mixins.desktop {
-    top: 84px;
+    top: 83px;
     right: 0;
+  }
+}
+
+
+.reviews__controls {
+  @include mixins.mobile {
+    margin-top: 31px;
+    margin-bottom: 38px;
+  }
+
+  @include mixins.tablet {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 175px;
+  }
+
+  @include mixins.desktop {
+    bottom: 2px;
   }
 }

@@ -14,10 +14,6 @@ $transform-height: 5px;
   }
 }
 
-.products-type-list__title {
-  margin: 0;
-}
-
 .products-type-list__item {
   & a {
     background-color: variables.$basic-green;
@@ -29,6 +25,7 @@ $transform-height: 5px;
 }
 
 .products-type-list__link {
+  margin: 0;
   display: block;
   color: variables.$white;
   font: inherit;

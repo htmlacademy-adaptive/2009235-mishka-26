@@ -71,6 +71,10 @@
     gap: 18px;
   }
 
+  @include mixins.desktop {
+    gap: 17px;
+  }
+
   &::before {
     content: "";
     display: block;

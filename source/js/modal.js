@@ -1,5 +1,5 @@
 (() => {
-  const modal_open_buttons = document.querySelectorAll('#modal-size-button');
+  const modal_open_buttons = document.querySelectorAll('.modal-size-button');
   const modal_window = document.querySelector('.modal');
 
   if (!modal_open_buttons.length) return;

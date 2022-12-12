@@ -10,8 +10,6 @@
   height: 52px;
 
   @include mixins.mobile {
-    margin-top: 31px;
-    margin-bottom: 38px;
     border: 1px solid variables.$special-grey;
 
     &::before {
@@ -22,13 +20,6 @@
       align-self: stretch;
       background-color: variables.$special-grey;
     }
-  }
-
-  @include mixins.tablet {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 175px;
   }
 }
 

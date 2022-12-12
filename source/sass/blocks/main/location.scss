@@ -56,6 +56,7 @@
     padding-right: 0;
 
     &::after {
+      top: 41%;
       right: calc(100% + 65px);
     }
   }

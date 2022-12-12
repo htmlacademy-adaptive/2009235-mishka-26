@@ -21,6 +21,11 @@
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
   }
+
+  @include mixins.desktop {
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
 }
 
 .footer__logo {
@@ -55,8 +60,9 @@
   }
 
   @include mixins.desktop {
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin-right: 80px;
+    margin-bottom: 1px;
+    margin-top: 2px;
   }
 }
 

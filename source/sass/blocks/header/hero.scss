@@ -28,7 +28,7 @@
     }
 
     @include mixins.desktop {
-      height: 34px;
+      height: 39.5px;
     }
   }
 }
@@ -62,7 +62,7 @@
     }
 
     @include mixins.desktop {
-      margin-top: 95px;
+      margin-top: 92px;
       margin-bottom: 355px;
     }
   }
@@ -95,6 +95,10 @@
   display: flex;
   flex-wrap: wrap;
   margin-left: -20px;
+
+  @include mixins.desktop {
+    column-gap: 25px;
+  }
 }
 
 .hero__site-item a {

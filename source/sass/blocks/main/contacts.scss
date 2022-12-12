@@ -59,5 +59,9 @@
       color: variables.$basic-green-dark;
       text-decoration-color: rgba(variables.$basic-green-dark, 0.1);
     }
+
+    @include mixins.desktop {
+      text-underline-offset: 13px;
+    }
   }
 }
