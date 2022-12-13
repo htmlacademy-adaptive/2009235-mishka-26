@@ -45,14 +45,6 @@
   width: 38px;
   border: 2px solid variables.$special-grey-dark;
 
-  &--radio {
-    border-radius: 50%;
-
-    @include mixins.mobile {
-      width: 40px;
-    }
-  }
-
   @include mixins.mobile {
     position: relative;
     flex-shrink: 0;
@@ -77,6 +69,18 @@
     @include mixins.tablet {
       width: 33px;
       height: 22px;
+    }
+  }
+
+  &--radio {
+    border-radius: 50%;
+
+    @include mixins.mobile {
+      width: 40px;
+    }
+
+    @include mixins.tablet {
+      width: 50px;
     }
   }
 
