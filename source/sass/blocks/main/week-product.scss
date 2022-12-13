@@ -1,0 +1,185 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.week_product__container {
+  @include mixins.zigzag-gray;
+
+  @include mixins.mobile {
+    display: flex;
+    flex-direction: column;
+    padding-top: 31px;
+    padding-bottom: 42px;
+  }
+
+  @include mixins.tablet {
+    display: grid;
+    grid-template-columns: auto 50%;
+    grid-auto-flow: dense;
+    column-gap: 42px;
+    padding-top: 53px;
+    padding-bottom: 70px;
+  }
+
+  @include mixins.desktop {
+    grid-template-columns: auto 60%;
+    padding-left: 175px;
+    column-gap: 58px;
+    padding-top: 70px;
+    padding-bottom: 95px;
+  }
+}
+
+.week-product__title {
+  @include mixins.header-2;
+  position: relative;
+
+  @include mixins.mobile {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 17px;
+  }
+
+  @include mixins.tablet {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    margin-bottom: 37px;
+    padding-right: 100px;
+  }
+
+  @include mixins.desktop {
+    margin-top: 60px;
+    margin-bottom: 35px;
+    padding-right: 0;
+  }
+
+  &::before {
+    content: "Товар недели";
+    display: block;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: variables.$basic-green;
+
+    @include mixins.mobile {
+      margin-top: 4px;
+    }
+
+    @include mixins.tablet {
+      text-align: center;
+      line-height: 17px;
+      position: absolute;
+      width: 100px;
+      right: 13px;
+      top: 5px;
+    }
+
+    @include mixins.desktop {
+      right: calc(100% + 45px);
+      top: 10px;
+    }
+  }
+}
+
+.week_product__paragraph {
+  @include mixins.paragraph;
+
+  @include mixins.mobile {
+    margin-bottom: 20px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 39px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 52px;
+  }
+}
+
+.week-product__characteristics {
+  margin: 0;
+  color: variables.$special-grey-dark;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  line-height: 20px;
+
+  @include mixins.mobile {
+    margin-bottom: 28px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 60px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 110px;
+  }
+
+  & div {
+    display: grid;
+    grid-template-columns: 80px auto;
+    column-gap: 20px;
+    padding: 11px 0;
+    padding-top: 8px;
+    border-bottom: 1px solid variables.$special-grey;
+
+    @include mixins.tablet {
+      column-gap: 17px;
+    }
+
+    @include mixins.desktop {
+      column-gap: 20px;
+    }
+  }
+
+  & dd {
+    margin: 0;
+  }
+}
+
+.week-product__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.week_product__container picture {
+  @include mixins.tablet {
+    grid-column: 2 / -1;
+    grid-row: 2 / 6;
+    align-self: end;
+  }
+
+  @include mixins.desktop {
+    grid-column: 2 / -1;
+    grid-row: 1 / 6;
+    align-self: start;
+  }
+}
+
+.week-product__price {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  text-align: center;
+  color: variables.$special-grey-dark;
+  margin-top: 25px;
+  margin-bottom: 10px;
+
+  @include mixins.tablet {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 31px;
+  }
+}
+
+.week-product__button {
+  margin-top: 15px;
+
+  @include mixins.tablet {
+    margin: 0;
+    align-self: end;
+  }
+}

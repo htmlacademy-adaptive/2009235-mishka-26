@@ -1,0 +1,60 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.slider__list {
+  position: relative;
+}
+
+.slider__controls {
+  display: flex;
+  height: 52px;
+
+  @include mixins.mobile {
+    border: 1px solid variables.$special-grey;
+
+    &::before {
+      content: " ";
+      width: 1px;
+      order: 2;
+      flex-shrink: 0;
+      align-self: stretch;
+      background-color: variables.$special-grey;
+    }
+  }
+}
+
+.slider__button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  flex-grow: 1;
+  transition: variables.$transition-all;
+  background-image: url("../img/huge-arrow-left.svg");
+  background-size: initial;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--prev {
+    order: 1;
+  }
+
+  &--next {
+    transform: rotate(180deg);
+    order: 3;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @include mixins.tablet {
+    background-position: center;
+  }
+}

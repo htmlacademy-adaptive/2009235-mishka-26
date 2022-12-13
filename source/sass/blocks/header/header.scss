@@ -1,0 +1,85 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.header {
+  background-color: variables.$white;
+}
+
+.header__wrapper {
+  @include mixins.tablet {
+    box-shadow: inset 0 -1px 0 0 variables.$special-grey2;
+  }
+}
+
+.header__container {
+  @include mixins.mobile {
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid variables.$special-grey;
+    min-height: 80px;
+  }
+
+  @include mixins.tablet {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: inset 0 -1px 0 0 variables.$special-grey2, -1px 0 0 0 variables.$special-grey2;
+    padding-right: 0;
+  }
+
+  @include mixins.desktop {
+    display: block;
+    padding-left: 0;
+    position: relative;
+    max-width: 1150px;
+  }
+}
+
+.header__logo {
+  background-color: transparent;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  transition: variables.$transition-all;
+
+  @include mixins.mobile {
+    padding: 22px 0;
+    margin: 0 auto;
+  }
+
+  @include mixins.tablet {
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  @include mixins.desktop {
+    @include mixins.centered;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.header__logo-image {
+  display: block;
+
+  @include mixins.mobile {
+    width: 86px;
+    height: 35px;
+  }
+
+  @include mixins.tablet {
+    width: 114px;
+    height: 46px;
+  }
+
+  @include mixins.desktop {
+    width: 149px;
+    height: 72px;
+  }
+}

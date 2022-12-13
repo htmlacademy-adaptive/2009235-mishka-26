@@ -1,0 +1,136 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+@use "../../libs/animation.scss";
+
+.main-nav__toggle {
+  cursor: pointer;
+  font: inherit;
+  display: block;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  right: 0;
+  top: 0;
+  padding: 0;
+  aspect-ratio: 1/1;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  transition: variables.$transition-all;
+  color: variables.$black;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &--closed::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 20px;
+    height: 2px;
+    background-color: variables.$special-grey-darknes;
+    box-shadow: 0 6px 0 0 variables.$black, 0 -6px 0 0 variables.$black;
+  }
+
+  &--opened::before,
+  &--opened::after {
+    @include mixins.centered;
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background-color: variables.$black;
+    box-shadow: none;
+  }
+
+  &--opened::after {
+    transform: rotate(45deg);
+  }
+
+  &--opened::before {
+    transform: rotate(-45deg);
+  }
+
+  @include mixins.tablet {
+    display: none;
+  }
+}
+
+.main-nav__wrapper {
+  @include mixins.mobile {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    transform-origin: 0 0;
+    visibility: hidden;
+    transform: scaleY(0);
+
+    &--opened {
+      animation-name: menu-open;
+    }
+
+    &--closed {
+      animation-name: menu-close;
+    }
+  }
+
+  @include mixins.tablet {
+    position: static;
+  }
+
+  @include mixins.desktop {
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    grid-auto-flow: dense;
+
+    &::before {
+      content: " ";
+      display: block;
+      grid-column: 2/3;
+    }
+  }
+}
+
+.main-nav__list {
+  display: flex;
+
+  @include mixins.mobile {
+    flex-direction: column;
+
+    & + & {
+      margin-top: -1px;
+    }
+  }
+
+  @include mixins.tablet {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+@include mixins.mobile {
+  .main-nav--no-js {
+    .main-nav__toggle {
+      visibility: hidden;
+    }
+
+    .main-nav__wrapper {
+      visibility: visible;
+      transform: scaleY(1);
+      position: static;
+      margin-left: -(variables.$padding-container-mobile);
+      width: calc(100% + (variables.$padding-container-mobile * 2));
+    }
+  }
+}

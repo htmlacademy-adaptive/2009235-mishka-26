@@ -1,0 +1,175 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.catalog {
+  @include mixins.mobile {
+    margin: 30px 0;
+  }
+
+  @include mixins.tablet {
+    padding-top: 67px;
+    padding-bottom: 51px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 110px;
+    padding-bottom: 57px;
+  }
+}
+
+.catalog__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 30px;
+
+  @include mixins.tablet {
+    column-gap: 50px;
+    row-gap: 55px;
+  }
+
+  @include mixins.desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.catalog__card {
+  position: relative;
+}
+
+.catalog__card-link {
+  display: grid;
+  cursor: pointer;
+  text-decoration: none;
+  color: variables.$black;
+
+  @include mixins.mobile {
+    grid-template-rows: 195px auto;
+  }
+
+  @include mixins.tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mixins.desktop {
+    grid-template-columns: auto;
+    grid-template-rows: 462px auto;
+    height: 100%;
+  }
+
+  &:hover {
+    & .catalog__card-content-wrapper {
+      box-shadow: 0 6px 10px rgba(variables.$black, 0.1);
+    }
+  }
+
+  &:active {
+    & .catalog__card-content-wrapper {
+      box-shadow: 0 3px 5px rgba(variables.$black, 0.1);
+    }
+  }
+}
+
+.catalog__card-image-wrapper {
+  display: block;
+  background-color: variables.$special-grey5;
+}
+
+.catalog__card-image {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.catalog__card-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 27px;
+  padding-top: 27px;
+  border: 1px solid variables.$special-grey;
+  transition: variables.$transition-all;
+
+  @include mixins.tablet {
+    padding: 25px 32px;
+  }
+
+  @include mixins.desktop {
+    padding: 26px 27px;
+  }
+}
+
+.catalog__card-title {
+  @include mixins.header-3;
+  margin-bottom: 6px;
+}
+
+.catalog__card-characteristics {
+  margin: 0;
+  color: variables.$special-grey-dark;
+  font-size: 13px;
+  line-height: 30px;
+  margin-bottom: 17px;
+
+  @include mixins.tablet {
+    font-size: 15px;
+    margin-bottom: 36px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 12px;
+  }
+}
+
+.catalog__card-price {
+  margin-top: auto;
+  border-top: 1px solid variables.$special-grey;
+  display: block;
+  font-size: 15px;
+  line-height: 24px;
+  padding-top: 22px;
+  padding-right: 20px;
+
+  @include mixins.tablet {
+    font-size: 17px;
+    line-height: 24px;
+    padding-top: 23px;
+  }
+}
+
+.catalog__card-button {
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: variables.$transition-all;
+  padding: 20px;
+  margin-right: -20px;
+  margin-bottom: -20px;
+  color: rgba(variables.$black, 0.2);
+  position: absolute;
+  bottom: 32px;
+  right: 27px;
+
+  @include mixins.tablet {
+    right: 32px;
+  }
+
+  @include mixins.desktop {
+    bottom: 30px;
+  }
+
+  &:hover {
+    color: variables.$basic-green;
+  }
+
+  &:active {
+    color: rgba(variables.$basic-green, 0.3);
+  }
+
+  & svg {
+    width: 21px;
+    height: 18px;
+  }
+}

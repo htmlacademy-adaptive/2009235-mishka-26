@@ -1,0 +1,26 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.copyright__link {
+  font: inherit;
+  color: variables.$black;
+  text-decoration: none;
+  transition: variables.$transition-all;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 18px;
+
+  &:hover .copyright__link-icon {
+    color: variables.$basic-green-dark;
+  }
+
+  &:active .copyright__link-icon {
+    color: rgba(variables.$basic-green-dark, 0.3);
+  }
+}
+
+.copyright__link-icon {
+  vertical-align: middle;
+  color: variables.$basic-green;
+  margin-left: 22px;
+}

@@ -1,0 +1,87 @@
+@use "../libs/variables.scss";
+@use "../libs/mixins.scss";
+
+.button {
+  margin: 0;
+}
+
+button.button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+a.button,
+button.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: variables.$special-grey-dark;
+  border-radius: 0;
+  border: 2px solid variables.$special-grey-dark;
+  box-shadow: none;
+  // Text
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: variables.$transition-all;
+
+  @include mixins.mobile {
+    letter-spacing: 0.5px;
+  }
+
+  // Size
+  padding: 14px;
+  // Text
+  font-size: 17px;
+  line-height: 20px;
+
+  &:hover {
+    background-color: variables.$special-grey-dark;
+    color: variables.$white;
+  }
+
+  &:active {
+    background-color: variables.$special-grey-dark;
+    color: rgba(variables.$white, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &--center {
+    width: 100%;
+    align-self: center;
+  }
+
+  &--add {
+    border: none;
+    padding: 16px;
+    background-color: variables.$basic-green;
+    color: variables.$white;
+
+    &:hover {
+      background-color: variables.$basic-green-dark;
+    }
+
+    &:active {
+      background-color: variables.$basic-green-dark;
+      color: rgba(variables.$white, 0.3);
+    }
+  }
+}
+
+a.button:not([href]) {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}

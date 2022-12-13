@@ -1,0 +1,83 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.footer {
+  background-color: variables.$basic-gray;
+}
+
+.footer__container {
+  display: flex;
+
+  @include mixins.mobile {
+    padding-top: 15px;
+    padding-bottom: 22px;
+    flex-direction: column;
+  }
+
+  @include mixins.tablet {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+
+  @include mixins.desktop {
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+}
+
+.footer__logo {
+  @include mixins.mobile {
+    display: none;
+  }
+
+  & svg {
+    color: variables.$black;
+  }
+
+  &:hover svg {
+    color: variables.$basic-green-dark;
+  }
+
+  &:active svg {
+    color: rgba(variables.$basic-green-dark, 0.3);
+  }
+}
+
+.footer__social {
+  @include mixins.mobile {
+    padding-top: 12px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid variables.$special-grey2;
+  }
+
+  @include mixins.tablet {
+    padding-top: 8px;
+    padding-bottom: 11px;
+    margin-right: 77px;
+  }
+
+  @include mixins.desktop {
+    margin-right: 80px;
+    margin-bottom: 1px;
+    margin-top: 2px;
+  }
+}
+
+.footer__copyright {
+  @include mixins.mobile {
+    padding-top: 25px;
+    align-self: center;
+  }
+
+  @include mixins.tablet {
+    justify-self: end;
+    margin-top: -2px;
+  }
+
+  @include mixins.desktop {
+    margin-top: 2px;
+  }
+}

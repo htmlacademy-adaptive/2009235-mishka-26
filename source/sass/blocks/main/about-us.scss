@@ -1,0 +1,137 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.about-us__container {
+  @include mixins.mobile {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 60px;
+    padding-bottom: 83px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 68px;
+    padding-bottom: 84px;
+    padding-left: 175px;
+  }
+}
+
+.about-us__title {
+  @include mixins.header-2;
+
+  @include mixins.mobile {
+    margin-bottom: 28px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 41px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 40px;
+  }
+}
+
+.about-us__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+
+  @include mixins.mobile {
+    gap: 24px;
+  }
+
+  @include mixins.tablet {
+    grid-template-columns: auto 50%;
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: column;
+    row-gap: 52px;
+    column-gap: 50px;
+  }
+
+  @include mixins.desktop {
+    grid-template-columns: auto 60%;
+    row-gap: 54px;
+  }
+}
+
+.about-us__item {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.mobile {
+    gap: 20px;
+  }
+
+  @include mixins.tablet {
+    gap: 18px;
+  }
+
+  @include mixins.desktop {
+    gap: 17px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 38px;
+    background-size: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--material::before {
+    background-image: url("../img/about-material.svg");
+    background-position: center left 8px;
+  }
+
+  &--price::before {
+    background-image: url("../img/about-price.svg");
+    background-position: top 30% right 85%;
+  }
+
+  &--like::before {
+    background-image: url("../img/about-like.svg");
+    background-position: top 75% left 30%;
+  }
+
+  &--work::before {
+    background-image: url("../img/about-work.svg");
+    background-position: center left 3px;
+    margin-top: 5px;
+    margin-bottom: -5px;
+
+    @include mixins.tablet {
+      background-position: top left 3px;
+    }
+  }
+
+  &--support::before {
+    background-image: url("../img/about-support.svg");
+    margin-left: -6px;
+
+    @include mixins.tablet {
+      background-position: top 3px center;
+    }
+  }
+
+  &--present::before {
+    background-image: url("../img/about-present.svg");
+    background-position: center left 3px;
+    margin-top: 5px;
+    margin-bottom: -3px;
+
+    @include mixins.tablet {
+      background-position: top left 3px;
+    }
+  }
+}
+
+.about-us__item-title {
+  @include mixins.header-4;
+}

@@ -1,0 +1,121 @@
+@use "../libs/variables.scss";
+@use "../libs/mixins.scss";
+
+.control {
+  position: relative;
+  cursor: pointer;
+  display: block;
+
+  @include mixins.mobile {
+    //padding: 10px 0;
+    //padding-left: 61px; /*38+23*/
+    display: flex;
+    gap: 22px;
+    align-items: center;
+  }
+
+  @include mixins.tablet {
+    padding: 17px 0;
+    padding-left: 82px; /*52+30*/
+  }
+}
+
+.control__label {
+  cursor: pointer;
+  color: variables.$black;
+  font-weight: 700;
+
+  @include mixins.mobile {
+    font-size: 17px;
+    line-height: 18px;
+    padding-top: 4px;
+  }
+
+  @include mixins.tablet {
+    font-size: 19px;
+    line-height: 18px;
+  }
+}
+
+.control__mark {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  aspect-ratio: 1 / 1;
+  width: 38px;
+  border: 2px solid variables.$special-grey-dark;
+
+  @include mixins.mobile {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  @include mixins.tablet {
+    width: 52px;
+    transform: translateY(-50%);
+  }
+
+  &--checkbox::before {
+    @include mixins.centered;
+    width: 27px;
+    height: 16px;
+    background-color: transparent;
+    background-image: url("../img/v.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: none;
+
+    @include mixins.tablet {
+      width: 33px;
+      height: 22px;
+    }
+  }
+
+  &--radio {
+    border-radius: 50%;
+
+    @include mixins.mobile {
+      width: 40px;
+    }
+
+    @include mixins.tablet {
+      width: 50px;
+    }
+  }
+
+  &--radio::before {
+    @include mixins.centered;
+    aspect-ratio: 1 / 1;
+    width: 16px;
+    background-color: variables.$basic-green2;
+    border-radius: 50%;
+    content: "";
+    display: none;
+
+    @include mixins.tablet {
+      width: 20px;
+    }
+  }
+}
+
+.control__input {
+  &:checked + .control__mark::before {
+    display: block;
+  }
+
+  &:hover + .control__mark {
+    border-color: variables.$basic-green2;
+  }
+
+  &:active + .control__mark {
+    border-color: rgba(variables.$special-grey-dark, 0.3);
+  }
+
+  &:disabled ~ span {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+    user-select: none;
+  }
+}

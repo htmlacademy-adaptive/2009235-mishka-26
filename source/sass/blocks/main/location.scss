@@ -1,0 +1,110 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.location__container {
+  @include mixins.mobile {
+    padding-top: 40px;
+    padding-bottom: 39px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include mixins.tablet {
+    padding-top: 68px;
+    padding-bottom: 57px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include mixins.desktop {
+    padding-top: 67px;
+    padding-bottom: 105px;
+    display: grid;
+    grid-template-columns: auto 60%;
+    grid-auto-flow: dense;
+    padding-left: 175px;
+  }
+}
+
+.location__title {
+  @include mixins.header-2;
+  margin-bottom: 28px;
+
+  @include mixins.tablet {
+    position: relative;
+    margin-bottom: 50px;
+    padding-right: 60px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 47px;
+      height: 81px;
+      background-image: url("../img/flag.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: 35%;
+      transform: translateY(-50%);
+      right: 3px;
+    }
+  }
+
+  @include mixins.desktop {
+    margin-top: 78px;
+    margin-bottom: 35px;
+    padding-right: 0;
+
+    &::after {
+      top: 41%;
+      right: calc(100% + 65px);
+    }
+  }
+}
+
+.location__contacts {
+  @include mixins.mobile {
+    margin-bottom: 62px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 47px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 85px;
+  }
+}
+
+.location__map {
+  @include mixins.mobile {
+    margin-left: -(variables.$padding-container-mobile);
+    margin-right: -(variables.$padding-container-mobile);
+    margin-bottom: 41px;
+  }
+
+  @include mixins.tablet {
+    margin-left: -(variables.$padding-container-tablet);
+    margin-right: -(variables.$padding-container-tablet);
+    margin-bottom: 55px;
+  }
+
+  @include mixins.desktop {
+    margin: 0;
+    grid-column: 2 / -1;
+    grid-row: 1 / 5;
+  }
+}
+
+.location__write {
+  @include mixins.tablet {
+    width: 230px;
+    align-self: center;
+  }
+
+  @include mixins.desktop {
+    width: 230px;
+    align-self: end;
+    justify-self: start;
+  }
+}

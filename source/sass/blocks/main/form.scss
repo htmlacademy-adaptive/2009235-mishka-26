@@ -1,0 +1,275 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.form {
+  @include mixins.mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+  }
+}
+
+.form__group {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  @include mixins.tablet {
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(3, auto);
+
+    &:nth-of-type(2n):not(:last-of-type)::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      width: 100vw;
+      background-color: variables.$basic-gray;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+  }
+
+  @include mixins.desktop {
+    grid-template-columns: 1fr 4fr;
+    margin-right: 175px;
+    padding: 49px 0;
+    padding-bottom: 50px;
+  }
+}
+
+.form__group--contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__group--submit {
+  display: flex;
+  gap: 30px;
+
+  @include mixins.mobile {
+    flex-direction: column;
+    margin-top: -16px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 2px;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  @include mixins.desktop {
+    padding-top: 0;
+    padding-left: 175px;
+  }
+}
+
+.form__legend {
+  display: block;
+  width: fit-content;
+  text-transform: uppercase;
+  color: variables.$basic-green;
+  font-weight: 700;
+
+  @include mixins.mobile {
+    font-size: 17px;
+    line-height: 16px;
+    min-width: 60px;
+    padding: 0;
+    padding-right: 20px;
+    margin: 0;
+    margin-bottom: 30px;
+    background-color: variables.$white;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      left: 0;
+      position: absolute;
+      background-color: variables.$basic-green;
+      z-index: -1;
+      top: 8px;
+    }
+  }
+
+  @include mixins.tablet {
+    margin-top: 15px;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    padding-right: 15px;
+  }
+
+  @include mixins.desktop {
+    margin-left: 62px;
+  }
+
+  &--color {
+    @include mixins.mobile {
+      margin-bottom: 25px;
+    }
+  }
+
+  &--lable {
+    @include mixins.mobile {
+      margin-bottom: 4px;
+      margin-top: 2px;
+    }
+
+    @include mixins.tablet {
+      margin-top: 0;
+    }
+
+    @include mixins.desktop {
+      margin-top: 0;
+    }
+  }
+
+  &--textarea {
+    @include mixins.mobile {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.form__group-wrapper {
+  display: grid;
+
+  &:not(:last-of-type) {
+    margin-bottom: 21px;
+
+    @include mixins.tablet {
+      margin-bottom: 23px;
+    }
+  }
+
+  @include mixins.tablet {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 25px;
+  }
+}
+
+.form__group-wrapper-contact {
+  position: relative;
+
+  &:not(:last-of-type) {
+    margin-bottom: 33px;
+
+    @include mixins.tablet {
+      margin-bottom: 23px;
+    }
+  }
+
+  @include mixins.tablet {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+  }
+
+  @include mixins.desktop {
+    grid-template-columns: 1fr 4fr;
+  }
+}
+
+.form__input-with-icon {
+  position: relative;
+
+  & svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+
+    @include mixins.mobile {
+      right: 2px;
+    }
+
+    @include mixins.tablet {
+      right: 22px;
+    }
+
+    @include mixins.desktop {
+      right: 5px;
+    }
+  }
+}
+
+.form__label {
+  font-weight: 700;
+
+  @include mixins.mobile {
+    font-size: 17px;
+    line-height: 18px;
+  }
+
+  @include mixins.tablet {
+    font-size: 19px;
+    line-height: 18px;
+    max-width: 150px;
+  }
+}
+
+.form__group-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+
+  @include mixins.mobile {
+    gap: 13px;
+
+    &--color {
+      gap: 23px;
+    }
+  }
+
+  @include mixins.tablet {
+    gap: 24px;
+
+    &--color {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 23px;
+    }
+  }
+
+  @include mixins.desktop {
+    &--color {
+      grid-template-columns: repeat(3, 253px);
+      column-gap: 10px;
+      margin-right: -175px;
+    }
+  }
+}
+
+.form__group-item {
+  display: block;
+  line-height: 100%;
+}
+
+.form__paragraph {
+  margin: 0;
+  color: variables.$special-grey-dark;
+
+  @include mixins.mobile {
+    font-size: 14px;
+    line-height: 16px;
+    order: -1;
+  }
+
+  @include mixins.tablet {
+    font-size: 17px;
+    line-height: 30px;
+  }
+}
+
+.form__button {
+  @include mixins.tablet {
+    width: 230px;
+  }
+}

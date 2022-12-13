@@ -1,0 +1,100 @@
+@use "../libs/variables.scss";
+@use "../libs/mixins.scss";
+
+.input {
+  display: flex;
+  align-items: center;
+  font: inherit;
+  color: variables.$special-grey-dark;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid variables.$black;
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+  cursor: text;
+  outline: none;
+  box-shadow: none;
+  transition: variables.$transition-all;
+
+  @include mixins.mobile {
+    font-size: 17px;
+    line-height: 18px;
+    min-height: 52px;
+    padding: 17px 30px 15px 0;
+  }
+
+  @include mixins.tablet {
+    font-size: 19px;
+    line-height: 18px;
+    min-height: 52px;
+    padding: 14px 60px 11px 18px;
+  }
+
+  &::placeholder {
+    color: rgba(variables.$black, 0.3);
+  }
+
+  & + svg {
+    color: rgba(variables.$black, 0.2);
+  }
+
+  &:hover {
+    border-color: variables.$basic-green2;
+
+    & + svg {
+      color: variables.$basic-green2;
+    }
+  }
+
+  &:focus {
+    border-color: variables.$basic-green2;
+
+    & + svg {
+      color: variables.$basic-green2;
+    }
+  }
+
+  &:focus:invalid,
+  &--invalid,
+  &--invalid:hover {
+    border-color: variables.$special-error;
+
+    & + svg {
+      color: variables.$special-error;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &:read-only {
+    cursor: default;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &--num::-webkit-inner-spin-button,
+  &--num::-webkit-outer-spin-button {
+    appearance: none;
+  }
+
+  &--textarea {
+    resize: none;
+    border: 2px solid variables.$special-grey-dark;
+    min-height: 142px;
+    padding: 15px;
+    color: variables.$black;
+  }
+
+  &::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+    right: 0;
+  }
+}

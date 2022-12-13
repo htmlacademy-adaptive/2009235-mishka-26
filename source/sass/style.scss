@@ -1,1 +1,43 @@
-// Начните писать стили здесь
+/*components*/
+@use "./libs/variables.scss";
+@use "./libs/mixins.scss";
+@use "./libs/animation.scss";
+@use "./global/fonts.scss";
+@use "./global/utils.scss";
+@use "./components/button.scss";
+@use "./components/input.scss";
+@use "./components/control.scss";
+@use "./components/modal.scss";
+@use "./components/size-list.scss";
+@use "./components/video.scss";
+/*blocks*/
+/*PAGE*/
+@use "./blocks/page.scss";
+/*HEAADER*/
+@use "./blocks/header/header.scss";
+@use "./blocks/header/main-nav.scss";
+@use "./blocks/header/site-list.scss";
+@use "./blocks/header/user-list.scss";
+@use "./blocks/header/hero.scss";
+@use "./blocks/header/products-type-list.scss";
+/*MAIN*/
+@use "./blocks/main/main.scss";
+/*index*/
+@use "./blocks/main/week-product.scss";
+@use "./blocks/main/about-us.scss";
+@use "./blocks/main/reviews.scss";
+@use "./blocks/main/slider.scss";
+/*form*/
+@use "./blocks/main/order.scss";
+@use "./blocks/main/form.scss";
+/*ctalog*/
+@use "./blocks/main/catalog.scss";
+@use "./blocks/main/manufacturing.scss";
+/*location*/
+@use "./blocks/main/contacts.scss";
+@use "./blocks/main/location.scss";
+@use "./blocks/main/map.scss";
+/*FOOTER*/
+@use "./blocks/footer/footer.scss";
+@use "./blocks/footer/social.scss";
+@use "./blocks/footer/copyright.scss";

@@ -1,0 +1,34 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.social__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 29px;
+}
+
+.social__link {
+  width: 28px;
+  height: 22px;
+  position: relative;
+  display: block;
+  transition: variables.$transition-all;
+  background-color: transparent;
+  color: variables.$special-grey6;
+
+  &:hover {
+    color: variables.$basic-green;
+  }
+
+  &:active {
+    color: rgba(variables.$basic-green, 0.3);
+  }
+}
+
+.social__link svg {
+  @include mixins.centered;
+}

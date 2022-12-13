@@ -1,0 +1,151 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.reviews {
+  @include mixins.tablet {
+    background-image: url("../img/reviews-background@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 350px auto;
+  }
+
+  @media (min-resolution: 2dppx) {
+    @include mixins.tablet {
+      background-image: url("../img/reviews-background@2x.jpg");
+    }
+  }
+
+  @include mixins.desktop {
+    background-image: none;
+  }
+}
+
+.reviews__container {
+  @include mixins.zigzag-gray;
+  position: relative;
+
+  @include mixins.mobile {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include mixins.tablet {
+    padding-top: 82px;
+    padding-bottom: 132px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 83px;
+    padding-bottom: 190px;
+    padding-left: 175px;
+  }
+}
+
+.reviews__title {
+  @include mixins.header-2;
+
+  @include mixins.mobile {
+    margin-bottom: 14px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 38px;
+    padding-right: 200px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 35px;
+  }
+}
+
+.reviews__text {
+  @include mixins.paragraph;
+  //filter: drop-shadow(0 0 1px red);
+  text-shadow: variables.$white 1px 1px, variables.$white 1px -1px, variables.$white -1px 1px, variables.$white -1px -1px;
+
+  @include mixins.mobile {
+    margin-bottom: 33px;
+    line-height: 30px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 61px;
+    line-height: 30px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 44px;
+  }
+}
+
+.reviews__item {
+  margin: 0;
+}
+
+.reviews__author-info {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.tablet {
+    padding-right: 180px;
+  }
+}
+
+.reviews__author-name {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  font-style: normal;
+
+  @include mixins.tablet {
+    font-size: 18px;
+  }
+
+  @include mixins.desktop {
+    font-size: 17px;
+    margin-bottom: 3px;
+  }
+}
+
+.reviews__author-mail {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 30px;
+  font-style: normal;
+  color: variables.$special-grey-dark;
+}
+
+.reviews__write {
+  @include mixins.tablet {
+    position: absolute;
+    width: 175px;
+    top: 76px;
+    right: variables.$padding-container-tablet;
+  }
+
+  @include mixins.desktop {
+    top: 83px;
+    right: 0;
+  }
+}
+
+
+.reviews__controls {
+  @include mixins.mobile {
+    margin-top: 31px;
+    margin-bottom: 38px;
+  }
+
+  @include mixins.tablet {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 175px;
+  }
+
+  @include mixins.desktop {
+    bottom: 2px;
+  }
+}

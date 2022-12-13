@@ -1,0 +1,158 @@
+@use "./variables.scss";
+
+@mixin mobile {
+  @media (max-width: calc(variables.$tablet-width - 1px)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: variables.$tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: variables.$desktop-width) {
+    @content;
+  }
+}
+
+@mixin header-1 {
+  font: inherit;
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+
+  @include mobile {
+    font-size: 27px;
+    line-height: 30px;
+  }
+
+  @include tablet {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @include desktop {
+    font-size: 53px;
+    line-height: 57px;
+  }
+}
+
+@mixin header-2 {
+  font: inherit;
+  margin: 0;
+  font-weight: 700;
+
+  @include mobile {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  @include tablet {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @include desktop {
+    font-size: 53px;
+    line-height: 57px;
+  }
+}
+
+@mixin header-3 {
+  font: inherit;
+  margin: 0;
+  font-weight: 700;
+
+  @include mobile {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+@mixin header-4 {
+  font: inherit;
+  margin: 0;
+  font-weight: 700;
+
+  @include mobile {
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@mixin paragraph {
+  font: inherit;
+  margin: 0;
+  color: variables.$special-grey-dark;
+
+  @include mobile {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  @include tablet {
+    font-size: 17px;
+    line-height: 30px;
+  }
+}
+
+@mixin centered {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+@mixin zigzag-gray {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 23px;
+    background-image: url("../img/zigzag-gray.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+
+    @include mobile {
+      width: calc(100% + (variables.$padding-container-mobile));
+      left: -(variables.$padding-container-mobile);
+      background-size: 320px auto;
+      background-repeat: repeat-x;
+    }
+
+    @include tablet {
+      width: calc(100% + (variables.$padding-container-tablet));
+      left: -(variables.$padding-container-tablet);
+      background-size: 768px auto;
+      background-repeat: repeat-x;
+      background-position: bottom left 10px;
+    }
+
+    @include desktop {
+      width: 100%;
+      right: 0;
+      left: 0;
+      background-repeat: repeat-x;
+      background-size: contain;
+      background-position: bottom left;
+    }
+  }
+}

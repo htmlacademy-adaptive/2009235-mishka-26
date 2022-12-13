@@ -1,0 +1,143 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+.manufacturing {
+  margin-top: 30px;
+  margin-bottom: 58px;
+
+  @include mixins.tablet {
+    margin-top: 0;
+    margin-bottom: 64px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 105px;
+  }
+}
+
+.manufacturing__container {
+  position: relative;
+}
+
+.manufacturing__item {
+  @include mixins.mobile {
+    box-shadow: inset 0 0 0 1px variables.$special-grey;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include mixins.desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    grid-row: 455px;
+  }
+
+  &:hover {
+    & .manufacturing__info-wrapper {
+      box-shadow: 0 6px 10px rgba(variables.$black, 0.1);
+    }
+  }
+
+  &:active {
+    & .manufacturing__info-wrapper {
+      box-shadow: 0 3px 5px rgba(variables.$black, 0.1);
+    }
+  }
+}
+
+.manufacturing__video {
+  @include mixins.mobile {
+    height: 150px;
+    width: 100%;
+    aspect-ratio: 26/15;
+  }
+
+  @include mixins.tablet {
+    height: 455px;
+  }
+
+  @include mixins.desktop {
+    grid-column: span 2;
+  }
+}
+
+.manufacturing__info-wrapper {
+  display: flex;
+  flex-direction: column;
+  transition: variables.$transition-all;
+
+  @include mixins.mobile {
+    padding: 35px 34px 33px;
+  }
+
+  @include mixins.tablet {
+    padding: 40px 41px 45px;
+    border: 1px solid variables.$special-grey;
+  }
+
+  @include mixins.desktop {
+    padding: 45px 56px 60px 78px;
+    margin-left: -50px;
+  }
+}
+
+.manufacturing__title {
+  @include mixins.header-3;
+  display: flex;
+  align-items: center;
+  order: -1;
+
+  &::before {
+    content: "";
+    width: 33px;
+    height: 22px;
+    background-image: url("../img/camera.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-shrink: 0;
+  }
+
+  @include mixins.mobile {
+    gap: 25px;
+    margin-bottom: 28px;
+    min-height: 48px;
+    padding: 21px 34px 0;
+  }
+
+  @include mixins.tablet {
+    gap: 33px;
+    align-items: baseline;
+    margin-bottom: 22px;
+  }
+
+  @include mixins.desktop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 27px;
+    margin-bottom: 27px;
+  }
+}
+
+.manufacturing__paragraph {
+  margin: 0;
+  color: variables.$special-grey-dark;
+
+  @include mixins.mobile {
+    font-size: 13px;
+    line-height: 24px;
+    margin-bottom: 41px;
+    margin-right: -1px;
+  }
+
+  @include mixins.tablet {
+    font-size: 15px;
+    line-height: 30px;
+    margin-bottom: 40px;
+  }
+}
+
+
+.manufacturing__button {
+  margin-top: auto;
+}

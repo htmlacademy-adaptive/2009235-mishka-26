@@ -1,0 +1,107 @@
+@use "../../libs/variables.scss";
+@use "../../libs/mixins.scss";
+
+$transform-height: 5px;
+
+.products-type-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+
+  @include mixins.tablet {
+    margin: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.products-type-list__item {
+  & a {
+    background-color: variables.$basic-green;
+  }
+
+  &:nth-of-type(2n+2) a {
+    background-color: variables.$basic-green-dark2;
+  }
+}
+
+.products-type-list__link {
+  margin: 0;
+  display: block;
+  color: variables.$white;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  transition: variables.$transition-all;
+
+  &::after {
+    content: "";
+    width: 60px;
+    height: 62px;
+    position: absolute;
+    top: 22px;
+    right: 27px;
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    transition: variables.$transition-all;
+
+    @include mixins.tablet {
+      top: 30px;
+    }
+  }
+
+  &--interior::after {
+    background-image: url("../img/interior.svg");
+  }
+
+  &--toys::after {
+    background-image: url("../img/toys.svg");
+
+    @include mixins.tablet {
+      right: 34px;
+    }
+  }
+
+  @include mixins.mobile {
+    font-size: 19px;
+    line-height: 24px;
+    padding: 25px 160px 30px 30px;
+  }
+
+  @include mixins.tablet {
+    font-size: 20px;
+    line-height: 30px;
+    padding: 25px 160px 35px 35px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: $transform-height;
+    background-color: inherit;
+    transition: variables.$transition-all;
+  }
+
+  &:hover {
+    transform: translateY(-$transform-height);
+
+    &::before {
+      transform: translateY($transform-height);
+    }
+
+    &::after {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    &::after {
+      opacity: 0.3;
+    }
+  }
+}

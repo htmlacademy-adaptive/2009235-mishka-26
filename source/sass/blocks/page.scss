@@ -1,0 +1,36 @@
+@use "../libs/variables.scss";
+@use "../libs/mixins.scss";
+
+.page__body {
+  font-family: "Open Sans", "Trebuchet MS", sans-serif;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
+  /*Сглаживание текста*/
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  background-color: variables.$white;
+  color: variables.$black;
+}
+
+.page__container {
+  margin: 0 auto;
+
+  @include mixins.mobile {
+    padding: 0 variables.$padding-container-mobile;
+  }
+
+  @include mixins.tablet {
+    padding: 0 variables.$padding-container-tablet;
+  }
+
+  @include mixins.desktop {
+    padding: 0;
+    max-width: 1050px;
+  }
+}
