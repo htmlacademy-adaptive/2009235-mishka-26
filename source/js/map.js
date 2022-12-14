@@ -2,7 +2,13 @@
   const map = document.querySelector('#map');
   if (!map) return;
 
-  ymaps.ready(init);
+  const map_script = document.createElement('script');
+  map_script.src = 'https://api-maps.yandex.ru/2.1/?apikey=c214d7f7-bb76-458f-8f7b-6523a76e9c85&lang=ru_RU';
+  map_script.type = 'text/javascript';
+  map.append(map_script);
+
+  setTimeout(init, 1000);
+  //ymaps.ready(init);
   function init() {
     var desktop_width = 1150;
     var tablet_width = 768;
