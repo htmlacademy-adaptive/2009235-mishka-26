@@ -2,7 +2,20 @@
   const map = document.querySelector('#map');
   if (!map) return;
 
-  ymaps.ready(init);
+  let ok = false;
+  window.addEventListener('scroll', function () {
+    if (ok === false) {
+      ok = true;
+      const map_script = document.createElement('script');
+      map_script.src = 'https://api-maps.yandex.ru/2.1/?apikey=c214d7f7-bb76-458f-8f7b-6523a76e9c85&lang=ru_RU';
+      map_script.type = 'text/javascript';
+      map.append(map_script);
+      map_script.addEventListener("load", () => {
+        ymaps.ready(init);
+      });
+    }
+  });
+
   function init() {
     var desktop_width = 1150;
     var tablet_width = 768;
